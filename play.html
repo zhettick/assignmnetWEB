@@ -4,6 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Virtual Pet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="diana.css">
 </head>
@@ -13,21 +14,30 @@
         <h1 id="play-title">&#127918; Catch the cat!</h1>
         <p id="play-intro">Think you’re quick enough? The kitty keeps running away! Catch it by clicking — and watch
             your score grow&#128377;</p>
-        <div class="navbar">
-            <div class="logo">&#128008;</div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="care.html">Care</a>
-                <a href="about.html">About Kitty</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="form.html">Adoption form</a>
-                <a href="play.html">Play</a>
-            </nav>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <p class="navbar-brand fw-bold text-black" href="#">🐱 My Virtual Pet</p>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navmenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="care.html">Care</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="about.html">About Kitty</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="form.html">Adoption form</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="play.html">Play</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <div class="instruction-container">
-            <button id="show-instructions">Show Instructions</button>
+        <div class="instruction-custom">
+            <button id="show-instructions" class="btn btn-primary my-3">Show instructions</button>
             <p id="instructions" style="display: none;">
                 How to play:<br>The cat will move around the screen every 1.5 seconds.<br>
                 Click on it to earn points. Try to beat your high score!
@@ -36,7 +46,7 @@
 
         <p id="score">Score: 0</p>
 
-        <div id="play-area">
+        <div id="play-area" class="play-custom mx-auto">
             <img src="cat/dancing.gif" id="cat" alt="cat">
         </div>
     </main>
@@ -45,7 +55,9 @@
         <p>2025 My Virtual Pet</p>
         <p>Created by Diana and Zumrad</p>
     </footer>
+
     <script src="diana.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
