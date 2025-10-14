@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Virtual Pet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="diana.css">
 </head>
@@ -14,10 +14,11 @@
         <h1 id="play-title">&#127918; Catch the cat!</h1>
         <p id="play-intro">Think you’re quick enough? The kitty keeps running away! Catch it by clicking — and watch
             your score grow&#128377;</p>
+
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container-fluid">
                 <p class="navbar-brand fw-bold text-black" href="#">&#128572; My Virtual Pet</p>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,12 +33,15 @@
                         <li class="nav-item"><a class="nav-link text-black" href="play.html">Play</a></li>
                     </ul>
                 </div>
+
             </div>
         </nav>
+
+        <div id="datetime"></div>
     </header>
     <main>
         <div class="instruction-custom">
-            <button id="show-instructions" class="btn btn-primary my-3">Show instructions</button>
+            <button id="show-instructions" class="instruction-btn btn btn-primary my-3">Show instructions</button>
             <p id="instructions" style="display: none;">
                 How to play:<br>The cat will move around the screen every 1.5 seconds.<br>
                 Click on it to earn points. Try to beat your high score!
@@ -54,9 +58,11 @@
     <footer>
         <p>2025 My Virtual Pet</p>
         <p>Created by Diana and Zumrad</p>
+        <button id="theme-toggle" class="theme-btn btn btn-primary my-3 px-2 py-2">Switch theme</button>
     </footer>
 
-    <script src="diana.js"></script>
+    <script src="play.js"></script>
+    <script src="common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
