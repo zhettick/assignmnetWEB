@@ -157,8 +157,11 @@
       margin-top: 40px;
       text-align: center;
     }
+    .answer { display: none; margin-left: 10px; color: #555; }
+    .question { cursor: pointer; color: #ff6b6b; }
 
-    /* === 📱 Media Queries === */
+
+    /* ===  Media Queries === */
 
     /* Mobile (до 600px) */
     @media (max-width: 600px) {

@@ -20,16 +20,21 @@
     <h1>🐾 Welcome to My Virtual Kitty!</h1>
     <p class="subtitle">Your own cute, fluffy friend on the web</p>
     <button id="openSidebar" class="btn btn-outline-danger position-absolute end-0 me-3" style="z-index: 2000; top: 20px;">☰</button>
+    <h2 id="datetime" 
+      style="position: absolute; left: 20px; top: 20px; font-size: 1.1em; color: #444; font-weight: 500;">
+  </h2>
 
   </header>
 
-  <!--  SIDEBAR (fixed) -->
+  <!--  SIDEBAR  -->
   <div id="sidebar" class="sidebar bg-light p-4 shadow" 
        style="position: fixed; top: 0; right: -250px; width: 250px; height: 100%; transition: 0.3s;">
-    <button id="closeSidebar" class="btn btn-sm btn-outline-danger mb-3">✖</button>
+    <button id="closeSidebar" class="btn btn-sm btn-outline-danger mb-3">✖️</button>
     <a href="account.html" class="d-block mb-2">Profile</a>
     <a href="settings.html" class="d-block mb-2">Settings</a>
     <a href="logout.html" class="d-block">Logout</a>
+     <!--  Кнопка для смены фона -->
+  <button onclick="changeColor()" class="btn btn-warning mt-3">Change Background</button>
   </div>
 
   <!--  NAVBAR -->
@@ -68,25 +73,20 @@
         <a href="care.html" class="btn btn-primary">Start Caring</a>
       </div>
     </div>
-
+    
    
   </main>
 
-  <!-- ✅ FOOTER -->
+  <!--  FOOTER -->
   <footer class="text-center py-3" style="background-color: #ffcbcb; border-top: 4px solid #ff9e9e;">
     <p class="mb-0">2025 My Virtual Pet. Created by Diana and Zumrad</p>
   </footer>
 
-  <!-- ✅ JS для сайдбара -->
-  <script>
-    const sidebar = document.getElementById('sidebar');
-    document.getElementById('openSidebar').addEventListener('click', () => {
-      sidebar.style.right = '0';
-    });
-    document.getElementById('closeSidebar').addEventListener('click', () => {
-      sidebar.style.right = '-250px';
-    });
-  </script>
+  
+  <script src="script1.js" ></script>
+
+
+  
 
 </body>
 </html>

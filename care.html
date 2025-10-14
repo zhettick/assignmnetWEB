@@ -34,7 +34,13 @@
   <div id="care-text">
     <p id="status">Your kitty is waiting...</p>
   </div>
-  
+  <div class="faq">
+  <h3 class="question">🐾 How often does my kitty sleep?</h3>
+  <p class="answer">Cats sleep around 16 hours a day!</p>
+
+  <h3 class="question">🐟 What is her favorite food?</h3>
+  <p class="answer">Definitely fish!</p>
+</div>
 
   <footer>
     <p>2025 My Virtual Pet.</p>
@@ -51,6 +57,15 @@
       if (action === 'sleep') status.textContent = "💤 Your kitty is sleeping...";
       if (action === 'dance') status.textContent = "🎵 Your kitty is dancing!";
     }
+    document.querySelectorAll(".question").forEach(q => {
+  q.addEventListener("click", () => {
+    const a = q.nextElementSibling;
+    a.style.display = (a.style.display === "block") ? "none" : "block";
+  });
+});
+
   </script>
+
 </body>
+
 </html>
