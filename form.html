@@ -4,7 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Virtual Pet</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="diana.css">
 </head>
@@ -15,12 +15,15 @@
         <p id="form-intro">Want to adopt your own virtual kitty?&#128008;</p>
         <p id="form-intro2">Fill in the form below and bring a new
             furry friend into your life!</p>
+
         <nav class="navbar navbar-expand-lg navbar-custom">
             <div class="container-fluid">
                 <p class="navbar-brand fw-bold text-black" href="#">&#128572; My Virtual Pet</p>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="collapse navbar-collapse" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
@@ -31,71 +34,108 @@
                         <li class="nav-item"><a class="nav-link text-black" href="play.html">Play</a></li>
                     </ul>
                 </div>
+
             </div>
         </nav>
+
+        <div id="datetime"></div>
     </header>
     <main>
-        <form class="form-custom my-5 mx-auto px-4">
-            <div>
-                <label for="name" class="form-label mt-3">Your name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Anna">
-            </div>
-
-            <div>
-                <label for="surname" class="form-label mt-3">Your surname:</label>
-                <input type="text" class="form-control" id="surname" placeholder="Darci">
-            </div>
-
-            <div>
-                <label for="email" class="form-label mt-3">Your email:</label>
-                <input type="email" class="form-control" id="email" placeholder="annadarci@gmail.com">
-            </div>
-
-            <div>
-                <label for="catname" class="form-label mt-3">Your cat's name:</label>
-                <input type="text" class="form-control" id="catname" placeholder="Mimi">
-            </div>
-
-            <div>
-                <label for="age" class="form-label mt-3">Preferred cat age:</label>
-                <input type="number" class="form-control" id="age" placeholder="2">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label mt-3">Cat gender:</label>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="male" value="male">
-                    <label class="form-check-label" for="male">Male</label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gender" id="female" value="female">
-                    <label class="form-check-label" for="female">Female</label>
+        <section class="container my-5 px-2" id="faq">
+            <h2 class="mb-4 text-center">FAQ</h2>
+            <div class="faq-item mb-3">
+                <button class="faq-question w-100 text-start p-3">How do I adopt a kitty?</button>
+                <div class="faq-answer p-3">
+                    <p>You can fill out the adoption form and choose your cats name, age, and activities.</p>
                 </div>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label mt-3">What activities do you want to do with your cat?</label>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="play" value="play">
-                    <label class="form-check-label" for="play">Play</label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="sleep" value="sleep">
-                    <label class="form-check-label" for="sleep">Sleep together</label>
-                </div>
-
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="walk" value="walk">
-                    <label class="form-check-label" for="walk">Go for a walk</label>
+            <div class="faq-item mb-3">
+                <button class="faq-question w-100 text-start p-3">Is it free to adopt?</button>
+                <div class="faq-answer p-3">
+                    <p>Yes, it is 100% free: all you need is love.</p>
                 </div>
             </div>
+        </section>
 
-            <button type="submit" class="btn btn-success w-100 my-3">Submit!</button>
-        </form>
+        <button id="open-popup" class="popup-btn btn">Adoption form</button>
+
+        <div id="popup" class="popup">
+            <div class="popup-content" id="popup-content">
+                <form class="form-custom my-5 mx-auto px-3" id="form">
+                    <span class="close-btn">&times;</span>
+
+                    <div>
+                        <label for="name" class="form-label mt-1">Your name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Anna">
+                        <small class="text-danger d-block" id="err-name"></small>
+                    </div>
+
+                    <div>
+                        <label for="surname" class="form-label mt-3">Your surname:</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Darci">
+                        <small class="text-danger d-block" id="err-surname"></small>
+                    </div>
+
+                    <div>
+                        <label for="email" class="form-label mt-3">Your email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="annadarci@gmail.com">
+                        <small class="text-danger d-block" id="err-email"></small>
+                    </div>
+
+                    <div>
+                        <label for="catname" class="form-label mt-3">Your cat's name:</label>
+                        <input type="text" class="form-control" id="catName" placeholder="Mimi">
+                        <small class="text-danger d-block" id="err-catName"></small>
+                    </div>
+
+                    <div>
+                        <label for="age" class="form-label mt-3">Preferred cat age:</label>
+                        <input type="number" class="form-control" id="catAge" placeholder="2">
+                        <small class="text-danger d-block" id="err-catAge"></small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label mt-3">Cat gender:</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+
+                        <small class="text-danger d-block" id="err-gender"></small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label mt-3">What activities do you want to do with your cat?</label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="play" value="play">
+                            <label class="form-check-label" for="play">Play</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sleep" value="sleep">
+                            <label class="form-check-label" for="sleep">Sleep together</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="walk" value="walk">
+                            <label class="form-check-label" for="walk">Go for a walk</label>
+                        </div>
+
+                        <small class="text-danger d-block" id="err-activities"></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100 my-3">Submit!</button>
+                </form>
+            </div>
+        </div>
 
         <section class="card-container my-5">
             <div class="row justify-content-center g-4">
@@ -104,7 +144,9 @@
                         <img src="cat/sitting.gif" alt="Sitting cat" class="card-img rounded-circle">
                         <div class="card-body">
                             <h3 class="card-title my-2">Playtime</h3>
-                            <p class="card-text">Our kitty loves to play! Spend quality time with your furry friend.</p>
+                            <p class="card-text">Our kitty loves to play! Spend quality time with your furry
+                                friend.
+                            </p>
                             <a href="#" class="btn btn-primary w-100">Learn more</a>
                         </div>
                     </div>
@@ -126,7 +168,8 @@
                         <img src="cat/eating2.gif" alt="Eating cat" class="card-img rounded-circle">
                         <div class="card-body">
                             <h3 class="card-title my-2">Feeding</h3>
-                            <p class="card-text">Healthy meals make happy cats! Learn what’s best for your pet.</p>
+                            <p class="card-text">Healthy meals make happy cats! Learn what’s best for your pet.
+                            </p>
                             <a href="#" class="btn btn-primary w-100">Learn more</a>
                         </div>
                     </div>
@@ -143,8 +186,11 @@
     <footer>
         <p>2025 My Virtual Pet</p>
         <p>Created by Diana and Zumrad</p>
+        <button id="theme-toggle" class="theme-btn btn btn-primary my-3 px-2 py-2">Switch theme</button>
     </footer>
-    
+
+    <script src="form.js"></script>
+    <script src="common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
