@@ -1,5 +1,5 @@
 
-/* Hero section */
+  /* Hero section */
   .hero {
     padding: 20px 10px;
   }
@@ -158,7 +158,7 @@
       text-align: center;
     }
 
-    /* ===  Media Queries === */
+    /* === 📱 Media Queries === */
 
     /* Mobile (до 600px) */
     @media (max-width: 600px) {
@@ -267,7 +267,6 @@
 .sidebar a:hover {
   color: #ff3366;
 }
-
 
 /* ===== Settings Page ===== */
 .settings-page {
@@ -453,3 +452,129 @@
   } 
 } 
  
+/*Adoption form page style*/ 
+#form-title, 
+#form-intro, 
+#form-intro2, 
+#form-end { 
+  text-align: center; 
+} 
+ 
+form { 
+  max-width: 500px; 
+  width: 90%; 
+  margin: 30px auto; 
+  background-color: #fffdf9; 
+  padding: 20px; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+} 
+ 
+form input { 
+  width: 95%; 
+  padding: 8px; 
+  margin-top: 20px; 
+  margin-bottom: 10px; 
+  border: 1px solid #b81414; 
+  border-radius: 5px; 
+  box-sizing: border-box; 
+} 
+ 
+form input[type="radio"], 
+form input[type="checkbox"] { 
+  width: auto; 
+  margin-right: 5px; 
+} 
+ 
+form button { 
+  width: 100%; 
+  max-width: 100px; 
+  background-color: rgb(200, 255, 182); 
+  border: none; 
+  padding: 8px 10px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+} 
+ 
+form button:hover { 
+  background-color: rgb(231, 255, 192); 
+  transition: background-color 0.3s, transform 0.2s; 
+  transform: scale(1.03); 
+} 
+ 
+.card-section { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 20px; 
+  padding: 20px; 
+  max-width: 1200px; 
+} 
+ 
+.card { 
+  background: #fffdf9; 
+  border: 2px solid #ffcbcb; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  width: 300px; 
+  text-align: center; 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+} 
+ 
+.card img { 
+  width: 100%; 
+  height: 200px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+} 
+ 
+.card h3 { 
+  margin-top: 15px; 
+  margin-bottom: 5px; 
+  color: #ff6b6b; 
+} 
+ 
+.card p { 
+  font-size: 1em; 
+} 
+ 
+.card button { 
+  background: #ff9e9e; 
+  color: white; 
+  border: none; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: bold; 
+} 
+ 
+.card button:hover { 
+  background: #ff6b6b; 
+} 
+ 
+.card:hover { 
+  transition: transform 0.3s, box-shadow 0.3s; 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+} 
+ 
+@media (max-width: 600px) { 
+  form { 
+    padding: 15px; 
+  } 
+ 
+  #form-title { 
+    font-size: 1.8em; 
+  } 
+ 
+  form button { 
+    font-size: 1em; 
+    padding: 8px; 
+  } 
+ 
+  .card { 
+    width: 90%; 
+  } 
+}

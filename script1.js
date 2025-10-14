@@ -7,10 +7,12 @@ function showKitty(action, img, text) {
 
 function feed() {
   showKitty("feed", "cat/eating.gif", "😺 Your kitty is eating!");
+  
 }
 
 function sleep() {
   showKitty("sleep", "cat/working.gif", "💤 Your kitty is sleeping...");
+  
 }
 
 function dance() { 
@@ -22,6 +24,7 @@ function resetKitty() {
   kitty.style.display = "none"; 
   kitty.src = "";               
   document.getElementById("status").innerText = "Your kitty is waiting...";
+  window.location.href = "care.html"
 }
 
 function logout() {
@@ -29,10 +32,3 @@ function logout() {
   window.location.href = "index.html";
 }
 
-document.getElementById('openSidebar').addEventListener('click', () => {
-  document.getElementById('sidebar').style.display = 'flex';
-});
-
-document.getElementById('closeSidebar').addEventListener('click', () => {
-  document.getElementById('sidebar').style.display = 'none';
-});
