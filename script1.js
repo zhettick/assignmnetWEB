@@ -62,12 +62,13 @@ document.getElementById('closeSidebar').addEventListener('click', () => {
       month: 'long', 
       day: 'numeric', 
       hour: '2-digit', 
-      minute: '2-digit'
+      minute: '2-digit',
+      second: '2-digit'
     };
     document.getElementById("datetime").textContent = now.toLocaleDateString('en-US', options);
   }
 
   
   updateDateTime();
-  setInterval(updateDateTime, 60000);
+  setInterval(updateDateTime, 1000);
 
