@@ -125,12 +125,3 @@ toggleBtn.addEventListener('click', () => {
 
 
 
-
-//  Проигрывание звука “мяу”
-const meowBtn = document.getElementById('meowBtn');
-const meowSound = new Audio('audio/meow.mp3'); // путь к твоему файлу звука
-
-meowBtn.addEventListener('click', () => {
-  meowSound.play();
-}); 
-
