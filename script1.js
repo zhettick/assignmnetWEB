@@ -121,3 +121,19 @@ toggleBtn.addEventListener('click', () => {
 
 
 
+function showKitty(action) {
+      const gifs = ['eat', 'sleep', 'dance'];
+      gifs.forEach(id => document.getElementById(id).style.display = 'none');
+      document.getElementById(action).style.display = 'inline';
+      const status = document.getElementById('status');
+      if (action === 'eat') status.textContent = "😺 Your kitty is eating!";
+      if (action === 'sleep') status.textContent = "💤 Your kitty is sleeping...";
+      if (action === 'dance') status.textContent = "🎵 Your kitty is dancing!";
+    }
+    document.querySelectorAll(".question").forEach(q => {
+  q.addEventListener("click", () => {
+    const a = q.nextElementSibling;
+    a.style.display = (a.style.display === "block") ? "none" : "block";
+  });
+});
+
