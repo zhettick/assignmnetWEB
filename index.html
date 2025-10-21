@@ -20,11 +20,14 @@
     <h1>🐾 Welcome to My Virtual Kitty!</h1>
     <p class="subtitle">Your own cute, fluffy friend on the web</p>
     <button id="openSidebar" class="btn btn-outline-danger position-absolute end-0 me-3" style="z-index: 2000; top: 20px;">☰</button>
-    <h2 id="datetime" 
-      style="position: absolute; left: 20px; top: 20px; font-size: 1.1em; color: #444; font-weight: 500;">
-  </h2>
+    
+  <div style="position: absolute; left: 20px; top: 20px;">
+  <button id="showTimeHeader" class="btn btn-outline-dark btn-sm">Show Time</button>
+  <h2 id="datetime" style="display: none; font-size: 1.1em; color: #444; font-weight: 500; margin-top: 5px;"></h2>
+  </div>
 
-  </header>
+  
+    </header>
 
   <!--  SIDEBAR  -->
   <div id="sidebar" class="sidebar bg-light p-4 shadow" 
@@ -35,6 +38,13 @@
     <a href="logout.html" class="d-block">Logout</a>
      <!--  Кнопка для смены фона -->
   <button onclick="changeColor()" class="btn btn-warning mt-3">Change Background</button>
+  <section class="container text-center my-5">
+   
+
+    <button id="toggleTheme" class="btn btn-secondary my-2">🌞 Toggle Day/Night</button>
+
+  </section>
+   
   </div>
 
   <!--  NAVBAR -->
@@ -74,12 +84,22 @@
       </div>
     </div>
     
-   
   </main>
+  
 
   <!--  FOOTER -->
   <footer class="text-center py-3" style="background-color: #ffcbcb; border-top: 4px solid #ff9e9e;">
     <p class="mb-0">2025 My Virtual Pet. Created by Diana and Zumrad</p>
+    <h2>🌟 Rate Your Kitty!</h2>
+    <div id="rating" class="my-3">
+      <span class="star">⭐</span>
+      <span class="star">⭐</span>
+      <span class="star">⭐</span>
+      <span class="star">⭐</span>
+      <span class="star">⭐</span>
+    </div>
+    <p id="ratingText" class="fw-bold text-danger"></p>
+
   </footer>
 
   

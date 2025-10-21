@@ -41,6 +41,7 @@
   <h3 class="question">🐟 What is her favorite food?</h3>
   <p class="answer">Definitely fish!</p>
 </div>
+ <button id="greetBtn" class="btn btn-info">🐱 Greet Me</button>
 
   <footer>
     <p>2025 My Virtual Pet.</p>
@@ -63,6 +64,31 @@
     a.style.display = (a.style.display === "block") ? "none" : "block";
   });
 });
+// Greeting based on time of day (using switch)
+document.getElementById("greetBtn").addEventListener("click", greetByTime);
+
+function greetByTime() {
+  const hour = new Date().getHours();
+  let greeting;
+
+  switch (true) {
+    case (hour < 12):
+      greeting = "☀️ Good morning, kitty lover! Your cat just woke up too!";
+      break;
+    case (hour < 18):
+      greeting = "😺 Good afternoon! Time to play with your kitty!";
+      break;
+    default:
+      greeting = "🌙 Good evening! Your kitty is getting sleepy...";
+  }
+
+  // Покажем приветствие на странице
+  const status = document.getElementById("status");
+  status.textContent = greeting;
+  status.style.color = "#ff6b6b";
+  status.style.fontWeight = "bold";
+}
+
 
   </script>
 

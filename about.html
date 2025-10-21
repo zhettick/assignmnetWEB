@@ -46,6 +46,13 @@
         <li>Sometimes hides in boxes</li>
       </ul>
     </div>
+    <!-- 🐾 Cat Quotes Section -->
+  <section class="quotes-section text-center py-5">
+  <h2 class="mb-3">🐱 Cat Quotes</h2>
+  <p id="quoteText" class="mt-3 fst-italic">Click the button to see a cat quote!</p>
+  <button id="quoteBtn" class="btn btn-danger mt-3 px-4 py-2 fw-bold">Show Random Quote 🐾</button>
+  </section>
+
 
     <div class="kitty-pic">
       <img src="cat/lovely.gif" alt="Cute Kitty">
@@ -76,4 +83,35 @@
     <p> 2025 My Virtual Pet.</p>
     <p>Created by Diana and Zumrad</p>
   </footer>
+  
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const quotes = [
+    "Cats rule the world.  Ernest Hemingway",
+    "Time spent with cats is never wasted.  Sigmund Freud",
+    "In ancient times cats were worshipped as gods; they have not forgotten this. Terry Pratchett",
+    "A cat has absolute emotional honesty.  Colette",
+    "Cats choose us; we do not own them. Kristin Cast",
+    "What greater gift than the love of a cat.  Charles Dickens",
+    "The smallest feline is a masterpiece.  Leonardo da Vinci"
+  ];
+
+  const quoteBtn = document.getElementById('quoteBtn');
+  const quoteText = document.getElementById('quoteText');
+
+  quoteBtn.addEventListener('click', () => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteText.style.opacity = 0;
+    setTimeout(() => {
+      quoteText.textContent = randomQuote;
+      quoteText.style.opacity = 1;
+    }, 250);
+  });
+});
+
+</script>
+
+
+ </body>
 </html>

@@ -19,6 +19,21 @@
   .hero-text p {
     font-size: 1em;
   }
+  .star {
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.star:hover {
+  transform: scale(1.2);
+  color: #ff6b6b;
+}
+#datetime {
+  transition: opacity 0.6s ease-in-out;
+}
+
+ 
 
   /* About section */
   .about-section {
@@ -45,6 +60,50 @@
   width: 300px;
   text-align: center;
 }
+/* === Cat Quotes Section === */
+.quotes-section {
+  background: linear-gradient(180deg, #fff8f8, #ffe6e6);
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 700px;
+  padding: 40px 20px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quotes-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+}
+
+.quotes-section h2 {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+#quoteText {
+  font-size: 1.1em;
+  color: #444;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.quotes-section button {
+  background-color: #ff9e9e;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.quotes-section button:hover {
+  background-color: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+
 
 /* Tablet — 2 карточки */
 @media (max-width: 992px) {
