@@ -53,7 +53,7 @@ document.getElementById('closeSidebar').addEventListener('click', () => {
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
     document.body.style.backgroundColor = randomColor;
   } 
-  // === 🕒 Время по кнопке в header (живое обновление) ===
+  // ===  Время   ===
 const timeHeaderBtn = document.getElementById('showTimeHeader');
 const datetimeElement = document.getElementById('datetime');
 let timeInterval; 
@@ -88,10 +88,6 @@ if (timeHeaderBtn) {
   });
 }
 
-
-     
-     
-// ===  INTERACTIVE JS SECTION ===
 
 //  Рейтинг (Rate Your Kitty)
 const stars = document.querySelectorAll('.star');
