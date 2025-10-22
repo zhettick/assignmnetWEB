@@ -11,3 +11,13 @@ document.addEventListener('keydown', (e) => {
     items[currentIndex].click();
   }
 });
+
+const img = document.getElementById("link-img");
+
+img.addEventListener("mouseover", () => {
+  img.style.transform = 'scale(1.2)';
+});
+
+img.addEventListener("mouseout", () => {
+  img.style.transform = 'scale(1)';
+});

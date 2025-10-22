@@ -13,6 +13,7 @@ btn.addEventListener("click", () => {
 const clock = document.getElementById("clock");
 const greeting = document.getElementById("greeting");
 
+
 const user = {
     name: "Diana",
     greet: function(message) {
