@@ -61,6 +61,10 @@ footer {
   background-color: #ff6b6b;
 }
 
+#link-img {
+  transition: transform 0.3s;
+}
+
 /*Playtime page style*/
 #play-title,
 #play-intro {
