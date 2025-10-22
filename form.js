@@ -89,7 +89,21 @@ form.addEventListener("submit", (e) => {
     return;
   }
 
+  const status = document.getElementById('formStatus');
+
   e.preventDefault();
-  alert("Form submitted successfully!");
+
+  fetch('https://httpbin.org/post', {
+    method: 'POST',
+    body: new FormData(form)
+  })
+  .then(() => {
+    status.textContent = "Form sent!";
+    form.reset();
+  })
+  .catch(() => {
+    status.textContent = "Error sending form.";
+  });
+
   form.reset();
 });
