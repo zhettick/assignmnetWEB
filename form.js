@@ -8,10 +8,13 @@ faqItems.forEach(item => {
 });
 
 const button = document.getElementById("open-popup");
+const sound = document.getElementById("clicking-sound");
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close-btn");
 
 button.addEventListener("click", () => {
+  sound.currentTime = 0;
+  sound.play();
   popup.style.display = "flex";
 });
 
