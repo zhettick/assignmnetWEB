@@ -37,11 +37,15 @@
             </div>
         </nav>
 
-        <div id="datetime"></div>
+        <div id="datetime">
+            <p id="greeting"></p>
+            <p id="clock"></p>
+        </div>
     </header>
     <main>
         <div class="instruction-custom">
             <button id="show-instructions" class="instruction-btn btn btn-primary my-3">Show instructions</button>
+            <audio id="clicking-sound" src="btnclick.m4a"></audio>
             <p id="instructions" style="display: none;">
                 How to play:<br>The cat will move around the screen every 1.5 seconds.<br>
                 Click on it to earn points. Try to beat your high score!
@@ -53,11 +57,21 @@
         <div id="play-area" class="play-custom mx-auto">
             <img src="cat/dancing.gif" id="cat" alt="cat">
         </div>
+
+        <div class="rating my-4">
+            <p>How much did you enjoy the game? :></p>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+            <span class="star">☆</span>
+        </div>
     </main>
 
     <footer>
         <p>2025 My Virtual Pet</p>
         <p>Created by Diana and Zumrad</p>
+        <p id="status" class="mt-5 mb-1">You are in light mode</p>
         <button id="theme-toggle" class="theme-btn btn btn-primary my-3 px-2 py-2">Switch theme</button>
     </footer>
 

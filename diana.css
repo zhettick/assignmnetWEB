@@ -96,6 +96,10 @@ footer {
   transition: transform 0.2s;
 }
 
+.star {
+  font-size: 27px;
+}
+
 /*Adoption form page style*/
 #form-title,
 #form-intro,
@@ -269,6 +273,10 @@ form .btn:hover {
     width: 100px;
   }
 
+  .star {
+    font-size: 1.6em;
+  }
+
   /* Form */
   #faq {
     max-width: 90%;
@@ -371,6 +379,10 @@ form .btn:hover {
 
   #cat {
     width: 130px;
+  }
+
+  .star {
+    font-size: 1.8em;
   }
 
   /* Form */
