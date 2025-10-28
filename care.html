@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kitty Care</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
   <link rel="stylesheet" href="general.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   <!--  Scroll Progress Bar -->
+  <div id="scrollProgress">
+    <div id="scrollPaws"></div>
+  </div>
   <h1>🐾 Take Care of Your Kitty</h1>
 
   <nav>
@@ -34,6 +39,10 @@
   <div id="care-text">
     <p id="status">Your kitty is waiting...</p>
   </div>
+  <input type="text" id="searchFaq" placeholder="Search questions..." class="search-box">
+  <ul id="suggestions" class="suggestions-box"></ul>
+
+
   <div class="faq">
   <h3 class="question">🐾 How often does my kitty sleep?</h3>
   <p class="answer">Cats sleep around 16 hours a day!</p>
@@ -43,13 +52,20 @@
 </div>
  <button id="greetBtn" class="btn btn-info">🐱 Greet Me</button>
 
+ <div id="notification" class="toast-msg"></div>
+ 
+
+
   <footer>
     <p>2025 My Virtual Pet.</p>
     <p>Created by Diana and Zumrad</p>
   </footer>
+ 
 
  <script src="script1.js"></script>
  <script src="care.js"></script>
+
+
 </body>
 
 </html>

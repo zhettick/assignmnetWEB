@@ -21,3 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 250);
   });
 });
+
+$("#copyQuoteBtn").on("click", function () {
+  let text = $("#quoteText").text();
+  navigator.clipboard.writeText(text);
+
+  $("#copyAlert").fadeIn(200);
+  setTimeout(() => $("#copyAlert").fadeOut(300), 1500);
+});

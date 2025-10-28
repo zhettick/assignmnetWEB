@@ -33,7 +33,6 @@
   transition: opacity 0.6s ease-in-out;
 }
 
- 
 
   /* About section */
   .about-section {
@@ -103,6 +102,35 @@
   transform: translateY(-2px);
 }
 
+.stats-section {
+  background: #ffe6e6;
+  padding: 30px 15px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(255, 150, 150, 0.25);
+}
+
+.stats-container {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff6b6b;
+  transition: 0.3s ease;
+}
+.stat-number:hover {
+  transform: scale(1.2);
+}
 
 
 /* Tablet — 2 карточки */
@@ -118,6 +146,32 @@
     width: 90%;
   }
 }
+.copy-container {
+  text-align: center;
+}
+
+#copyQuoteBtn {
+  background-color: #ff9e9e;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  padding: 8px 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#copyQuoteBtn:hover {
+  background-color: #ff6b6b;
+}
+
+#copyAlert {
+  display: none;
+  color: #1fa658;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 1.1em;
+}
+
 
 
   /* Gallery */
@@ -218,6 +272,76 @@
     }
     .answer { display: none; margin-left: 10px; color: #555; }
     .question { cursor: pointer; color: #ff6b6b; }
+
+    .search-box {
+  padding: 8px 12px;
+  margin: 10px auto;
+  display: block;
+  width: 250px;
+  border: 2px solid #ff9e9e;
+  border-radius: 8px;
+  outline: none;
+}
+.search-box:focus {
+  border-color: #ff6b6b;
+}
+.search-box::placeholder {
+  color: #d98282;
+  font-style: italic;
+}
+.suggestions-box {
+  background: #fff;
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.suggestions-box li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestions-box li:hover {
+  background-color: #ffe6e6;
+}
+
+.toast-msg {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: rgb(255, 253, 253);
+  color: rgb(245, 75, 75);
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 5000;
+  display: none;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  animation: fadeUp 0.4s ease-out;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    transform: translate(-50%, 70%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+  }
+}
+
+
 
 
     /* ===  Media Queries === */
@@ -639,4 +763,22 @@ form button:hover {
   .card { 
     width: 90%; 
   } 
+
+}
+/* Scroll Progress Bar */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 7px;
+  width: 100%;
+  background: #ffe6e6;
+  z-index: 9999;
+}
+
+#scrollPaws {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff9e9e, #ff6b6b);
+  transition: width 0.15s linear;
 }
