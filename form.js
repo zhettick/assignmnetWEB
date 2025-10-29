@@ -28,7 +28,20 @@ function setErr(id, msg) {
   document.getElementById(id).textContent = msg;
 }
 
+$(window).on("scroll", function () {
+  $(".card-img").each(function () {
+    const top = $(this).offset().top;
+    const winTop = $(window).scrollTop();
+    const winHeight = $(window).height();
+
+    if (!$(this).attr("src") && top < winTop + winHeight) {
+      $(this).attr("src", $(this).data("src"));
+    }
+  });
+}).trigger("scroll");
+
 form.addEventListener("submit", (e) => {
+  e.preventDefault();
   setErr("err-name", "");
   setErr("err-surname", "");
   setErr("err-email", "");
@@ -88,25 +101,38 @@ form.addEventListener("submit", (e) => {
   }
 
   if (!check) {
-    e.preventDefault();
     return;
   }
+  $("#form").on("submit", function (e) {
+    e.preventDefault();
 
-  const status = document.getElementById('formStatus');
+    const submitBtn = $("#submit-btn");
+    const spinner = submitBtn.find(".spinner-border");
+    const btnText = submitBtn.find(".submit-btn-text");
+    const status = $("#formStatus");
 
-  e.preventDefault();
+    submitBtn.prop("disabled", true);
+    spinner.removeClass("d-none");
+    btnText.text("Please wait...");
 
-  fetch('https://httpbin.org/post', {
-    method: 'POST',
-    body: new FormData(form)
-  })
-  .then(() => {
-    status.textContent = "Form sent!";
-    form.reset();
-  })
-  .catch(() => {
-    status.textContent = "Error sending form.";
+    fetch("https://httpbin.org/post", {
+      method: "POST",
+      body: new FormData(this)
+    })
+      .then(() => {
+        setTimeout(() => {
+          spinner.addClass("d-none");
+          btnText.text("Submit!");
+          submitBtn.prop("disabled", false);
+          status.text("Form submitted!");
+          $("#form")[0].reset();
+        }, 500);
+      })
+      .catch(() => {
+        spinner.addClass("d-none");
+        btnText.text("Submit!");
+        submitBtn.prop("disabled", false);
+        status.text("Error sending form.");
+      });
   });
-
-  form.reset();
 });
