@@ -7,26 +7,30 @@ faqItems.forEach(item => {
   });
 });
 
-const button = document.getElementById("open-popup");
+const openBtn = document.getElementById("open-popup");
 const sound = document.getElementById("clicking-sound");
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close-btn");
 
-button.addEventListener("click", () => {
+openBtn.addEventListener("click", () => {
   sound.currentTime = 0;
   sound.play();
+  document.body.style.overflow = "hidden";
   popup.style.display = "flex";
+  popup.classList.add("show");
 });
 
-closeBtn.addEventListener("click", () => {
+const closePopup = () => {
   popup.style.display = "none";
+  popup.classList.remove("show");
+  document.body.style.overflow = "auto";
+};
+
+closeBtn.addEventListener("click", closePopup);
+
+popup.addEventListener("click", e => {
+  if (e.target === popup) closePopup();
 });
-
-const form = document.querySelector("form.form-custom");
-
-function setErr(id, msg) {
-  document.getElementById(id).textContent = msg;
-}
 
 $(window).on("scroll", function () {
   $(".card-img").each(function () {
@@ -39,6 +43,12 @@ $(window).on("scroll", function () {
     }
   });
 }).trigger("scroll");
+
+const form = document.querySelector("form.form-custom");
+
+function setErr(id, msg) {
+  document.getElementById(id).textContent = msg;
+}
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
