@@ -97,3 +97,63 @@ function showKitty(action) {
     showNotification("💃 Kitty is dancing!");
   }
 }
+// 🌗 Toggle Day/Night Mode with Local Storage (универсальный вариант)
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.getElementById('toggleTheme');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Применяем сохранённую тему даже если кнопки нет
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+
+  if (toggleBtn) {
+    toggleBtn.textContent = savedTheme === 'dark'
+      ? '🌞 Switch to Day Mode'
+      : '🌙 Switch to Night Mode';
+
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggleBtn.textContent = isDark
+        ? '🌞 Switch to Day Mode'
+        : '🌙 Switch to Night Mode';
+    });
+  }
+});
+//  Random Background Color (работает на всех страницах)
+function changeColor() {
+  const colors = [
+    '#fffaf5', // светло-бежевый
+    '#ffe6e6', // розоватый
+    '#fff3cd', // кремовый
+    '#cdefff', // голубой
+    '#e5ffcc', // салатовый
+    '#f3d1ff', // сиреневый
+    '#9d0025ff',  // клубничный
+    '#'
+  ];
+
+  // Выбираем случайный цвет
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  // Меняем фон для всех ключевых блоков
+  document.body.style.backgroundColor = randomColor;
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.style.backgroundColor = randomColor);
+
+  
+  
+}
+
+//  Восстанавливаем цвет при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  const savedColor = localStorage.getItem('backgroundColor');
+  if (savedColor) {
+    document.body.style.backgroundColor = savedColor;
+    document.querySelectorAll('header, footer, section, main, .card, nav')
+      .forEach(el => el.style.backgroundColor = savedColor);
+  }
+});

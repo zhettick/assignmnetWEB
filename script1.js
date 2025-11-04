@@ -48,11 +48,42 @@ document.getElementById('closeSidebar').addEventListener('click', () => {
       sidebar.style.right = '-250px';
     });
     
-    function changeColor() {
-    const colors = ['#fffaf5', '#ffcbcb', '#ffd6a5', '#caffbf', '#9bf6ff', '#bdb2ff'];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.body.style.backgroundColor = randomColor;
-  } 
+   ;
+   //  Функция смены цвета
+function changeColor() {
+  const colors = [
+    '#fffaf5', '#ffe6e6', '#fff3cd', '#cdefff', '#e5ffcc', '#f3d1ff', '#ffd1dc'
+  ];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  document.body.style.backgroundColor = randomColor;
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.style.backgroundColor = randomColor);
+
+  localStorage.setItem('backgroundColor', randomColor);
+}
+
+//  Функция сброса цвета
+function resetColor() {
+  localStorage.removeItem('backgroundColor'); // удаляем сохранённый цвет
+  const defaultColor = '#fffaf5'; // стандартный цвет
+
+  document.body.style.backgroundColor = defaultColor;
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.style.backgroundColor = '');
+}
+
+//  Восстановление цвета при загрузке
+document.addEventListener("DOMContentLoaded", () => {
+  const savedColor = localStorage.getItem('backgroundColor');
+  if (savedColor) {
+    document.body.style.backgroundColor = savedColor;
+    document.querySelectorAll('header, footer, section, main, .card, nav')
+      .forEach(el => el.style.backgroundColor = savedColor);
+  }
+});
+
+ 
   // ===  Время   ===
 const timeHeaderBtn = document.getElementById('showTimeHeader');
 const datetimeElement = document.getElementById('datetime');
@@ -72,7 +103,7 @@ if (timeHeaderBtn) {
     function updateLiveTime() {
       const now = new Date();
       const options = { 
-        weekday: 'short', 
+        weekday: 'long', 
         year: 'numeric', 
         month: 'long', 
         day: 'numeric', 
@@ -102,22 +133,51 @@ stars.forEach((star, index) => {
   });
 });
 
-//  Переключатель Day/Night Theme
+// 🌗 Toggle Day/Night Mode with Local Storage
 const toggleBtn = document.getElementById('toggleTheme');
-let darkMode = false;
 
+// Проверяем сохранённую тему
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  enableDarkMode();
+} else {
+  disableDarkMode();
+}
+
+// === Переключение темы ===
 toggleBtn.addEventListener('click', () => {
-  darkMode = !darkMode;
-  if (darkMode) {
-    document.body.style.backgroundColor = '#2e2e2e';
-    document.body.style.color = '#fff';
-    toggleBtn.textContent = '🌚 Switch to Day Mode';
+  if (document.body.classList.contains('dark-mode')) {
+    disableDarkMode();
   } else {
-    document.body.style.backgroundColor = '#fffaf5';
-    document.body.style.color = '#333';
-    toggleBtn.textContent = '🌞 Switch to Night Mode';
+    enableDarkMode();
   }
 });
+
+//  Включаем тёмную тему
+function enableDarkMode() {
+  document.body.classList.add('dark-mode');
+
+  // Перекрашиваем ВСЁ, кроме sidebar
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => {
+      if (!el.closest('.sidebar')) el.classList.add('dark-block');
+    });
+
+  toggleBtn.textContent = '🌞 Switch to Day Mode';
+  localStorage.setItem('theme', 'dark');
+}
+
+//  Возвращаем светлую тему
+function disableDarkMode() {
+  document.body.classList.remove('dark-mode');
+
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.classList.remove('dark-block'));
+
+  toggleBtn.textContent = '🌙 Switch to Night Mode';
+  localStorage.setItem('theme', 'light');
+}
+
 
 
 

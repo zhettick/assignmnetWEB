@@ -80,3 +80,116 @@ footer {
   padding: 15px;
   margin-top: 40px;
 }
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;
+  width: 0;
+  background: #ff6b6b;
+  z-index: 2000;
+  transition: width 0.1s linear;
+}
+/* === 🌗 Dark Mode Global Fix === */
+body.dark-mode {
+  background: #121212 !important;
+  color: #f5f5f5 !important;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode nav {
+  background: #2e2e2e !important;
+  color: #ffe6e6 !important;
+}
+
+body.dark-mode .btn {
+  background: #444 !important;
+  color: #ffe6e6 !important;
+}
+
+body.dark-mode a {
+  color: #ffb6c1 !important;
+}
+/* 🌙 Тёмная версия всех розовых блоков */
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode nav,
+body.dark-mode .quotes-section,
+body.dark-mode .stats-section,
+body.dark-mode .card,
+body.dark-mode .rating-section,
+body.dark-mode section {
+  background-color: #2b2b2b;  /* насыщенно-тёмный фон */
+  color: #f5f5f5;            /* светлый текст */
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.15); /* лёгкое розовое свечение */
+}
+
+/* 🐾 Кнопки в тёмной теме */
+body.dark-mode .btn,
+body.dark-mode button {
+  background-color: #ff7a8a; /* мягкий розовый */
+  color: #1f1f1f;
+  border: none;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode button:hover {
+  background-color: #ff5c7b;
+  color: white;
+}
+
+/* ✨ Заголовки и акценты */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffb6c1;
+  text-shadow: 0 0 6px rgba(255, 182, 193, 0.3);
+}
+
+/* Тёмный фон для body */
+body.dark-mode {
+  background-color: #1a1a1a; 
+  color: #eaeaea;
+}
+/*  Тёмная версия всех розовых блоков */
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode nav,
+body.dark-mode .quotes-section,
+body.dark-mode .stats-section,
+body.dark-mode .card,
+body.dark-mode .rating-section,
+body.dark-mode section {
+  background-color: #2b2b2b;  
+  color: #f5f5f5;            
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.15); /* лёгкое розовое свечение */
+}
+
+/* 🐾 Кнопки в тёмной теме */
+body.dark-mode .btn,
+body.dark-mode button {
+  background-color: #ff7a8a; 
+  color: #1f1f1f;
+  border: none;
+}
+
+body.dark-mode .btn:hover,
+body.dark-mode button:hover {
+  background-color: #ff5c7b;
+  color: white;
+}
+
+/*  Заголовки и акценты */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffb6c1;
+  text-shadow: 0 0 6px rgba(255, 182, 193, 0.3);
+}
+
+/* Тёмный фон для body */
+body.dark-mode {
+  background-color: #1a1a1a; 
+  color: #eaeaea;
+}
