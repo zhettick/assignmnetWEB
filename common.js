@@ -1,13 +1,23 @@
 const btn = document.getElementById("theme-toggle");
-const btnStatus = document.getElementById('status');
+const statusText = document.getElementById("status");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  statusText.textContent = "You are in dark mode";
+} else {
+  statusText.textContent = "You are in light mode";
+}
 
 btn.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
-    if (document.body.classList.contains("dark-theme")) {
-        btnStatus.textContent = 'You are in dark mode';
-    } else {
-        btnStatus.textContent = 'You are in light mode';
-    }
+  document.body.classList.toggle("dark-mode");
+
+  const isDark = document.body.classList.contains("dark-mode");
+  statusText.textContent = isDark
+    ? "You are in dark mode"
+    : "You are in light mode";
+
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
 const clock = document.getElementById("clock");
@@ -16,7 +26,7 @@ const greeting = document.getElementById("greeting");
 
 const user = {
     name: "Diana",
-    greet: function(message) {
+    greet: function (message) {
         return `${message}, ${this.name}!`;
     }
 };
@@ -54,3 +64,10 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById("scrollProgress").style.width = scrollPercent + "%";
+});

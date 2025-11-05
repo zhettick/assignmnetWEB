@@ -157,3 +157,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .forEach(el => el.style.backgroundColor = savedColor);
   }
 });
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById("scrollProgress").style.width = scrollPercent + "%";
+});

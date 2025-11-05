@@ -1,22 +1,10 @@
-body.dark-theme {
-  background-color: #2c2c2c;
-  color: #f5f5f5;
-}
-
 h1 {
   font-weight: bold;
 }
 
-header,
-footer {
-  color: black;
-}
-
 .theme-btn {
   font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .theme-btn:hover {
@@ -43,7 +31,7 @@ footer {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #ff9e9e;
+  background-color: #ff6b6b;
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -51,7 +39,7 @@ footer {
 }
 
 .carousel-indicators {
-  background-color: #ffb6c1;
+  background-color: #ff9e9e;
   border-radius: 10px;
   bottom: -10px;
   width: 50%
@@ -69,16 +57,6 @@ footer {
 #play-title,
 #play-intro {
   text-align: center;
-}
-
-.instruction-btn {
-  border: none;
-  cursor: pointer;
-}
-
-.instruction-btn:hover {
-  transition: background-color 0.3s, transform 0.2s;
-  transform: scale(1.03);
 }
 
 #play-area {
@@ -113,16 +91,15 @@ footer {
 }
 
 .faq-item {
-  border: 1px solid #ffcbcb;
   border-radius: 10px;
   background-color: #fffdf9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
-  background-color: #ffcbcb;
-  border: 1px solid #ffcbcb;
-  ;
+  background-color: #ff9e9e;
+  border: 1px solid #ff9e9e;
+  color: white;
   border-radius: 10px 10px 0 0;
   font-weight: bold;
   cursor: pointer;
@@ -159,16 +136,7 @@ footer {
 
 .popup-btn {
   align-self: auto;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
   max-width: 300px;
-}
-
-.popup-btn:hover {
-  color: white;
-  transition: background-color 0.3s, transform 0.2s;
-  transform: scale(1.03);
 }
 
 .close-btn {
@@ -181,8 +149,10 @@ footer {
   display: none;
   justify-content: center;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
@@ -193,7 +163,7 @@ footer {
 .form-custom {
   max-width: 500px;
   align-items: center;
-  background-color: #fffdf9;
+  background-color: #fffaf5;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -206,15 +176,10 @@ footer {
 
 form .btn {
   align-self: auto;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
 }
 
 form .btn:hover {
   background-color: rgb(155, 249, 3);
-  transition: background-color 0.3s, transform 0.2s;
-  transform: scale(1.03);
 }
 
 .card {
@@ -247,18 +212,6 @@ form .btn:hover {
 
 .card-body {
   font-size: 1em;
-}
-
-.card .btn {
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.card .btn:hover {
-  background-color: #ff6b6b;
-  transition: background-color 0.3s, transform 0.2s;
-  transform: scale(1.03);
 }
 
 .card:hover {

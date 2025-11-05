@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.add('dark-mode');
   }
 
-  
+
   if (toggleBtn) {
     toggleBtn.textContent = savedTheme === 'dark'
       ? '🌞 Switch to Day Mode'
@@ -75,7 +75,7 @@ function changeColor() {
   document.querySelectorAll('header, footer, section, main, .card, nav')
     .forEach(el => el.style.backgroundColor = randomColor);
 
-  
+
 }
 
 //  Восстанавливаем цвет при загрузке страницы
@@ -86,4 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('header, footer, section, main, .card, nav')
       .forEach(el => el.style.backgroundColor = savedColor);
   }
+});
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.getElementById("scrollProgress").style.width = scrollPercent + "%";
 });
