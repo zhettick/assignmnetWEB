@@ -3,7 +3,7 @@ h1 {
 }
 
 .theme-btn {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   border-radius: 10px;
 }
 
@@ -11,6 +11,11 @@ h1 {
   transform: scale(1.03);
   transition: background-color 0.3s, transform 0.2s;
 }
+
+#theme-toggle {
+    max-width: 50%;
+    font-size: 0.8em;
+  }
 
 /*Gallery page style*/
 #gallery-title,
@@ -219,7 +224,7 @@ form .btn:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 575px) {
+@media (max-width: 600px) {
   body {
     font-size: 1rem;
     transition: font-size 0.3s ease;
@@ -232,11 +237,6 @@ form .btn:hover {
 
   nav {
     flex-direction: column;
-  }
-
-  #theme-toggle {
-    max-width: 50%;
-    font-size: 0.8em;
   }
 
   /* Gallery */
@@ -283,7 +283,7 @@ form .btn:hover {
   }
 }
 
-@media (min-width: 576px) and (max-width: 992px) {
+@media (min-width: 601px) and (max-width: 992px) {
   body {
     font-size: 1.1rem;
     transition: font-size 0.3s ease;
@@ -292,11 +292,6 @@ form .btn:hover {
   h1 {
     font-size: 2.8rem !important;
     transition: font-size 0.3s ease;
-  }
-
-  #theme-toggle {
-    max-width: 50%;
-    font-size: 0.8em;
   }
 
   /* Gallery */
@@ -344,11 +339,6 @@ form .btn:hover {
   h1 {
     font-size: 3rem !important;
     transition: font-size 0.3s ease;
-  }
-
-  #theme-toggle {
-    max-width: 50%;
-    font-size: 0.8em;
   }
 
   /* Gallery */

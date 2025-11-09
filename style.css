@@ -1,25 +1,25 @@
+/* Hero section */
+.hero {
+  padding: 20px 10px;
+}
 
-  /* Hero section */
-  .hero {
-    padding: 20px 10px;
-  }
+.hero-img {
+  width: 150px;
+}
 
-  .hero-img {
-    width: 150px;
-  }
+.hero-text {
+  max-width: 90%;
+}
 
-  .hero-text {
-    max-width: 90%;
-  }
+.hero-text h2 {
+  font-size: 1.5em;
+}
 
-  .hero-text h2 {
-    font-size: 1.5em;
-  }
+.hero-text p {
+  font-size: 1em;
+}
 
-  .hero-text p {
-    font-size: 1em;
-  }
-  .star {
+.star {
   font-size: 2em;
   cursor: pointer;
   transition: transform 0.2s, color 0.3s;
@@ -29,35 +29,40 @@
   transform: scale(1.2);
   color: #ff6b6b;
 }
+
 #datetime {
   transition: opacity 0.6s ease-in-out;
 }
 
 
-  /* About section */
-  .about-section {
-    grid-template-columns: 1fr;
-    padding: 20px 10px;
-  }
+/* About section */
+.about-section {
+  grid-template-columns: 1fr;
+  padding: 20px 10px;
+}
 
-  /* Контейнер для Fun Facts и котика */
+/* Контейнер для Fun Facts и котика */
 .funfacts-container {
   display: flex;
   justify-content: center;
-  align-items: center; /* Центрирует текст и котика по вертикали */
+  align-items: center;
+  /* Центрирует текст и котика по вертикали */
   gap: 40px;
   margin: 40px auto;
   max-width: 900px;
-  flex-wrap: wrap; /* На маленьких экранах котик уйдёт вниз */
+  flex-wrap: wrap;
+  /* На маленьких экранах котик уйдёт вниз */
 }
 
 /* Блок с фактами */
 .facts {
   background-color: #ffe6ef;
   border-radius: 15px;
-  padding: 40px 50px; /* увеличим немного внутренний отступ */
+  padding: 40px 50px;
+  /* увеличим немного внутренний отступ */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* текст по центру */
+  text-align: center;
+  /* текст по центру */
   flex: 1 1 400px;
 }
 
@@ -78,6 +83,7 @@
   margin: 8px 0;
   font-size: 1.05em;
 }
+
 /* Котик */
 .kitty-pic img {
   width: 200px;
@@ -160,6 +166,7 @@
   color: #ff6b6b;
   transition: 0.3s ease;
 }
+
 .stat-number:hover {
   transform: scale(1.2);
 }
@@ -178,6 +185,7 @@
     width: 90%;
   }
 }
+
 .copy-container {
   text-align: center;
 }
@@ -204,67 +212,77 @@
   font-size: 1.1em;
 }
 
-  /* Care section */
-  h1 {
-      font-size: 2.5em;
-      color: #ff6b6b;
-      margin-top: 20px;
-    }
+/* Care section */
+h1 {
+  font-size: 2.5em;
+  color: #000000;
+  margin-top: 20px;
+  font-weight: bold;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin: 20px 0;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 20px 0;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #333;
-      background: #ffe6e6;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-weight: bold;
-    }
+nav a {
+  text-decoration: none;
+  color: #333;
+  background: #ffe6e6;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
 
-    nav a:hover {
-      background: #ff9e9e;
-      color: white;
-    }
+nav a:hover {
+  background: #ff9e9e;
+  color: white;
+}
 
-    .kitty-container img {
-      width: 250px;
-      border-radius: 15px;
-    }
+.kitty-container img {
+  width: 250px;
+  border-radius: 15px;
+}
 
-    .care-actions button {
-      margin: 10px;
-      padding: 10px 25px;
-      background: #ff9e9e;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-size: 1em;
-    }
+.care-actions button {
+  margin: 10px;
+  padding: 10px 25px;
+  background: #ff9e9e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+}
 
-    .care-actions button:hover {
-      background: #ff6b6b;
-    }
+.care-actions button:hover {
+  background: #ff6b6b;
+}
 
-    footer {
-      background: #ffe6e6;
-      padding: 15px;
-      margin-top: 40px;
-      text-align: center;
-    }
-    .answer { display: none; margin-left: 10px; color: #555; }
-    .question { cursor: pointer; color: #ff6b6b; }
+footer {
+  background: #ffe6e6;
+  padding: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
 
-    .search-box {
+.answer {
+  display: none;
+  margin-left: 10px;
+  color: #555;
+}
+
+.question {
+  cursor: pointer;
+  color: #ff6b6b;
+}
+
+.search-box {
   padding: 8px 12px;
   margin: 10px auto;
   display: block;
@@ -273,13 +291,16 @@
   border-radius: 8px;
   outline: none;
 }
+
 .search-box:focus {
   border-color: #ff6b6b;
 }
+
 .search-box::placeholder {
   color: #d98282;
   font-style: italic;
 }
+
 .suggestions-box {
   background: #fff;
   list-style: none;
@@ -289,7 +310,7 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
 }
@@ -326,6 +347,7 @@
     transform: translate(-50%, 70%);
     opacity: 0;
   }
+
   to {
     transform: translate(-50%, 50%);
     opacity: 1;
@@ -335,55 +357,74 @@
 
 
 
-    /* ===  Media Queries === */
+/* ===  Media Queries === */
 
-    /* Mobile (до 600px) */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.6em;
-      }
+/* Mobile (до 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    transition: font-size 0.3s ease;
+  }
 
-      .kitty-container img {
-        width: 180px;
-      }
+  h1 {
+    font-size: 2.4rem !important;
+  }
 
-      .care-actions {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+  nav {
+    flex-direction: column;
+  }
 
-      .care-actions button {
-        width: 80%;
-        font-size: 1em;
-      }
-    }
+  .kitty-container img {
+    width: 180px;
+  }
 
-    /* Tablet (до 992px) */
-    @media (min-width: 601px) and (max-width: 992px) {
-      h1 {
-        font-size: 2em;
-      }
+  .care-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .kitty-container img {
-        width: 220px;
-      }
+  .care-actions button {
+    width: 80%;
+    font-size: 1em;
+  }
+}
 
-      .care-actions button {
-        font-size: 1.1em;
-      }
-    }
+/* Tablet (до 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  body {
+    font-size: 1.1rem;
+    transition: font-size 0.3s ease;
+  }
 
-    /* Desktop (от 993px и выше) */
-    @media (min-width: 993px) {
-      h1 {
-        font-size: 2.5em;
-      }
+  h1 {
+    font-size: 2.8rem !important;
+  }
 
-      .kitty-container img {
-        width: 250px;
-      }
-    }
+  .kitty-container img {
+    width: 220px;
+  }
+
+  .care-actions button {
+    font-size: 1.1em;
+  }
+}
+
+/* Desktop (от 993px и выше) */
+@media (min-width: 993px) {
+  body {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .kitty-container img {
+    width: 250px;
+  }
+}
 
 /* Сайдбар */
 
@@ -399,7 +440,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  z-index: 3000; }
+  z-index: 3000;
+}
 
 .sidebar a {
   text-decoration: none;
@@ -415,17 +457,21 @@
 .sidebar h2 {
   color: #ff6b6b;
 }
+
 /* === SIDEBAR BUTTONS STYLING === */
 .sidebar {
   display: flex;
   flex-direction: column;
-  align-items: center; /* центрует все элементы по центру */
-  gap: 15px; /* расстояние между кнопками */
+  align-items: center;
+  /* центрует все элементы по центру */
+  gap: 15px;
+  /* расстояние между кнопками */
   padding: 25px;
 }
 
 .sidebar button {
-  width: 200px;            /* одинаковая ширина */
+  width: 200px;
+  /* одинаковая ширина */
   padding: 10px 0;
   font-weight: bold;
   border-radius: 12px;
@@ -542,6 +588,22 @@ body.dark-mode p {
   border-top: 2px solid #ff9e9e;
 }
 
+#theme-toggle {
+  max-width: 50%;
+  font-size: 0.8em;
+}
+
+.theme-btn {
+  width: auto !important;
+  font-size: 0.8em !important;
+  border-radius: 10px !important;
+}
+
+.theme-btn:hover {
+  transform: scale(1.03) !important;
+  transition: background-color 0.3s, transform 0.2s !important;
+}
+
 /* Ссылки внутри */
 .sidebar a {
   text-decoration: none;
@@ -570,7 +632,8 @@ body.dark-mode p {
 
 .settings-header h1 {
   margin: 0;
-  color: #ff6b6b;
+  color: #000000;
+  font-weight: bold;
 }
 
 .back-btn {
