@@ -8,7 +8,8 @@
 }
 
 .hero-text {
-  max-width: 90%;
+  max-width: 100%;
+  margin: auto;
 }
 
 .hero-text h2 {
@@ -56,7 +57,7 @@
 
 /* Блок с фактами */
 .facts {
-  background-color: #ffe6ef;
+  background-color: #ff99993e;
   border-radius: 15px;
   padding: 40px 50px;
   /* увеличим немного внутренний отступ */
@@ -99,7 +100,7 @@
 
 /* === Cat Quotes Section === */
 .quotes-section {
-  background: linear-gradient(180deg, #fff8f8, #ffe6e6);
+  background: linear-gradient(180deg, hsla(0, 100%, 80%, 0.249), #ffe6e6);
   border-radius: 20px;
   margin: 50px auto;
   max-width: 700px;
@@ -141,7 +142,7 @@
 }
 
 .stats-section {
-  background: #ffe6e6;
+  background: #ff99993e;
   padding: 30px 15px;
   border-radius: 20px;
   max-width: 900px;
@@ -274,12 +275,12 @@ footer {
 .answer {
   display: none;
   margin-left: 10px;
-  color: #555;
+  color: #000000;
 }
 
 .question {
   cursor: pointer;
-  color: #ff6b6b;
+  color: #000000;
 }
 
 .search-box {
@@ -302,7 +303,7 @@ footer {
 }
 
 .suggestions-box {
-  background: #fff;
+  background: #ffffff;
   list-style: none;
   margin-top: 5px;
   padding: 0;
@@ -445,7 +446,7 @@ footer {
 
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   font-weight: 500;
 }
 
@@ -505,30 +506,6 @@ footer {
 }
 
 /*  Toggle Theme */
-/* === DARK MODE STYLES === */
-
-/* Основной фон */
-body.dark-mode {
-  background-color: #181818;
-  color: #f2f2f2;
-  transition: background-color 0.4s, color 0.4s;
-}
-
-/* Блоки (только те, где есть класс dark-block) */
-.dark-block {
-  background-color: #222 !important;
-  color: #ffe6e6 !important;
-  box-shadow: 0 0 15px rgba(255, 182, 193, 0.25);
-  border-radius: 10px;
-}
-
-/* Текст с лёгким свечением */
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode p {
-  text-shadow: 0 0 6px rgba(255, 182, 193, 0.4);
-}
 
 /* Кнопка переключения */
 #toggleTheme {
@@ -607,7 +584,7 @@ body.dark-mode p {
 /* Ссылки внутри */
 .sidebar a {
   text-decoration: none;
-  color: #333;
+  color: #000000;
   font-size: 18px;
 }
 
@@ -619,7 +596,7 @@ body.dark-mode p {
 .settings-page {
   background: #fffaf5;
   font-family: 'Comic Sans MS', cursive;
-  color: #333;
+  color: #000000;
   text-align: center;
   padding: 30px;
 }

@@ -5,7 +5,7 @@ body {
   padding: 0;
   text-align: center;
   background: #fffaf5;
-  color: #333;
+  color: #000000;
 }
 
 header {
@@ -31,11 +31,6 @@ div.navbar {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-}
-
-.navbar .logo {
-  font-size: 1.8em;
-  font-weight: bold;
 }
 
 nav {
@@ -112,8 +107,7 @@ body.dark-mode section {
 }
 
 body.dark-mode header,
-body.dark-mode footer,
-body.dark-mode nav {
+body.dark-mode footer{
   background: #4d0000 !important;
   color: #fff0f0 !important;
   border-color: #990000 !important;
@@ -139,8 +133,9 @@ body.dark-mode .sidebar {
 
 body.dark-mode h1,
 body.dark-mode h2,
-body.dark-mode h3 {
-  color: #ff6666;
+body.dark-mode h3,
+body.dark-mode .logo {
+  color: #ffffff;
   text-shadow: 0 0 6px rgba(255, 80, 80, 0.4);
 }
 
@@ -159,6 +154,13 @@ body.dark-mode #copyQuoteBtn {
   transition: 0.3s;
 }
 
+body.dark-mode .container,
+body.dark-mode .hero-block {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
 body.dark-mode .btn:hover,
 body.dark-mode button:hover,
 body.dark-mode .save-btn:hover,
@@ -170,7 +172,6 @@ body.dark-mode #copyQuoteBtn:hover {
 body.dark-mode .faq-question:hover {
   transform: none !important;
   transition: none !important;
-  background: #990000 !important;
 }
 
 body.dark-mode form .btn:hover {
@@ -210,6 +211,13 @@ body.dark-mode .carousel-control-next-icon {
   background-color: rgba(255, 80, 80, 0.3);
 }
 
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+  background-color: transparent !important; 
+  box-shadow: none !important;
+  border: none !important;
+}
+
 body.dark-mode .navbar,
 body.dark-mode .navbar-brand,
 body.dark-mode .nav-link {
@@ -220,4 +228,24 @@ body.dark-mode .navbar-custom {
   background-color: #2b0000 !important;
   border-bottom: 1px solid #660000 !important;
   box-shadow: 0 2px 8px rgba(255, 100, 100, 0.15);
+}
+
+body.dark-mode .navbar a:hover {
+  background: #970404 !important;
+}
+
+body.dark-mode .search-box {
+  border: 2px solid #ff7a7a;
+}
+
+body.dark-mode .search-box:focus {
+  border-color: #e64646;
+}
+
+body.dark-mode .search-box::placeholder {
+  color: #b84a4a;
+}
+
+body.dark-mode .link-text {
+  color: rgb(158, 158, 247);
 }

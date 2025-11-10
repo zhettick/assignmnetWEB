@@ -19,7 +19,6 @@ function greetByTime() {
   // Покажем приветствие на странице
   const status = document.getElementById("status");
   status.textContent = greeting;
-  status.style.color = "#ff6b6b";
   status.style.fontWeight = "bold";
 }
 
