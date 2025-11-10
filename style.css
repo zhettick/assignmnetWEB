@@ -221,29 +221,6 @@ h1 {
   font-weight: bold;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 20px 0;
-}
-
-nav a {
-  text-decoration: none;
-  color: #333;
-  background: #ffe6e6;
-  padding: 8px 14px;
-  border-radius: 8px;
-  transition: 0.3s;
-  font-weight: bold;
-}
-
-nav a:hover {
-  background: #ff9e9e;
-  color: white;
-}
-
 .kitty-container img {
   width: 250px;
   border-radius: 15px;
@@ -466,8 +443,6 @@ footer {
   align-items: center;
   /* центрует все элементы по центру */
   gap: 15px;
-  /* расстояние между кнопками */
-  padding: 25px;
 }
 
 .sidebar button {
@@ -542,7 +517,8 @@ footer {
 
 /*  Мобильная адаптация */
 @media (max-width: 600px) {
-  .sidebar button {
+  .sidebar button,
+  #toggleTheme {
     width: 90%;
   }
 }
