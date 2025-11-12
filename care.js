@@ -96,27 +96,7 @@ function showKitty(action) {
     showNotification("💃 Kitty is dancing!");
   }
 }
-// 🌗 Toggle Day/Night Mode with Local Storage
-const toggleBtn = document.getElementById('toggleTheme');
 
-// Проверяем сохранённую тему
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'dark') {
-  enableDarkMode();
-} else {
-  disableDarkMode();
-}
-
-// === Переключение темы ===
-if (toggleBtn) {
-  toggleBtn.addEventListener('click', () => {
-    if (document.body.classList.contains('dark-mode')) {
-      disableDarkMode();
-    } else {
-      enableDarkMode();
-    }
-  });
-}
 //  Random Background Color (работает на всех страницах)
 function changeColor() {
   const colors = [

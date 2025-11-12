@@ -32,12 +32,18 @@ setInterval(() => {
 }, 1500);
 
 const stars = document.querySelectorAll('.star');
+let saved = +localStorage.getItem('rating') || 0;
 
-stars.forEach((star, index) => {
+function updateStars(r) {
+  stars.forEach((s, i) => s.style.color = i < r ? 'orange' : 'pink');
+}
+
+updateStars(saved);
+
+stars.forEach((star, i) => {
   star.addEventListener('click', () => {
-    stars.forEach(s => s.style.color = 'pink');
-    for (let i = 0; i <= index; i++) {
-      stars[i].style.color = 'orange'; 
-    }
+    saved = i + 1;
+    localStorage.setItem('rating', saved);
+    updateStars(saved);
   });
 });
