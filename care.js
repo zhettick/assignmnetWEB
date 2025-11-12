@@ -96,32 +96,27 @@ function showKitty(action) {
     showNotification("💃 Kitty is dancing!");
   }
 }
-// 🌗 Toggle Day/Night Mode with Local Storage (универсальный вариант)
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById('toggleTheme');
-  const savedTheme = localStorage.getItem('theme');
+// 🌗 Toggle Day/Night Mode with Local Storage
+const toggleBtn = document.getElementById('toggleTheme');
 
-  // Применяем сохранённую тему даже если кнопки нет
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+// Проверяем сохранённую тему
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  enableDarkMode();
+} else {
+  disableDarkMode();
+}
 
-
-  if (toggleBtn) {
-    toggleBtn.textContent = savedTheme === 'dark'
-      ? '🌞 Switch to Day Mode'
-      : '🌙 Switch to Night Mode';
-
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      toggleBtn.textContent = isDark
-        ? '🌞 Switch to Day Mode'
-        : '🌙 Switch to Night Mode';
-    });
-  }
-});
+// === Переключение темы ===
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    if (document.body.classList.contains('dark-mode')) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+}
 //  Random Background Color (работает на всех страницах)
 function changeColor() {
   const colors = [
