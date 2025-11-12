@@ -29,31 +29,25 @@ $("#copyQuoteBtn").on("click", function () {
   $("#copyAlert").fadeIn(200);
   setTimeout(() => $("#copyAlert").fadeOut(300), 1500);
 });
-// 🌗 Toggle Day/Night Mode with Local Storage (универсальный вариант)
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById('toggleTheme');
-  const savedTheme = localStorage.getItem('theme');
+const btn = document.getElementById("theme-toggle");
+const savedTheme = localStorage.getItem("theme");
 
-  // Применяем сохранённую тему даже если кнопки нет
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  btn.textContent = "🌞 Switch to Day Mode";
+} else {
+  btn.textContent = "🌙 Switch to Night Mode";
+}
 
+btn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
 
-  if (toggleBtn) {
-    toggleBtn.textContent = savedTheme === 'dark'
-      ? '🌞 Switch to Day Mode'
-      : '🌙 Switch to Night Mode';
+  const isDark = document.body.classList.contains("dark-mode");
+  btn.textContent = isDark
+    ? "🌞 Switch to Day Mode"
+    : "🌙 Switch to Night Mode";
 
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      toggleBtn.textContent = isDark
-        ? '🌞 Switch to Day Mode'
-        : '🌙 Switch to Night Mode';
-    });
-  }
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 //  Random Background Color (работает на всех страницах)
 function changeColor() {
