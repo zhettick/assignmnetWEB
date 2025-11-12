@@ -1,15 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const quotes = [
-    "Cats rule the world.  Ernest Hemingway",
-    "Time spent with cats is never wasted.  Sigmund Freud",
-    "In ancient times cats were worshipped as gods; they have not forgotten this. Terry Pratchett",
-    "A cat has absolute emotional honesty.  Colette",
-    "Cats choose us; we do not own them. Kristin Cast",
-    "What greater gift than the love of a cat.  Charles Dickens",
-    "The smallest feline is a masterpiece.  Leonardo da Vinci"
-  ];
-
-  const quoteBtn = document.getElementById('quoteBtn');
+const quoteBtn = document.getElementById('quoteBtn');
   const quoteText = document.getElementById('quoteText');
 
   quoteBtn.addEventListener('click', () => {
@@ -20,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       quoteText.style.opacity = 1;
     }, 250);
   });
-});
+
 
 $("#copyQuoteBtn").on("click", function () {
   let text = $("#quoteText").text();
@@ -68,4 +57,22 @@ window.addEventListener("scroll", () => {
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
   const scrollPercent = (scrollTop / docHeight) * 100;
   document.getElementById("scrollProgress").style.width = scrollPercent + "%";
+});
+// === Random Cat Quote API ===
+document.addEventListener("DOMContentLoaded", () => {
+  const quoteBtn = document.getElementById("quoteBtn");
+  const quoteText = document.getElementById("quoteText");
+
+  if (quoteBtn) {
+    quoteBtn.addEventListener("click", async () => {
+      try {
+        const response = await fetch("https://catfact.ninja/fact");
+        const data = await response.json();
+        quoteText.textContent = "🐾 " + data.fact;
+      } catch (error) {
+        quoteText.textContent = "😿 Could not fetch a quote right now.";
+        console.error(error);
+      }
+    });
+  }
 });
