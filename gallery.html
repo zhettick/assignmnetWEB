@@ -3,75 +3,146 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Virtual Pet</title>
+    <title>Kitty Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="diana.css">
 </head>
 
 <body>
+    <div id="scrollProgress">
+        <div id="scrollPaws"></div>
+    </div>
+
     <header>
         <h1 id="gallery-title">&#128571; Meow gallery</h1>
-        <p id="gallery-intro">Every moment with kitty is unique - discover them more below&#128062;</p>
-        <div class="navbar">
-            <div class="logo">&#128008;</div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="care.html">Care</a>
-                <a href="about.html">About Kitty</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="form.html">Adoption form</a>
-                <a href="play.html">Play</a>
-            </nav>
-        </div>
+        
+        <nav class="navbar navbar-expand-md navbar-custom">
+            <div class="container-fluid">
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="care.html">Care</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="gallery.html">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="form.html">Adoption form</a></li>
+                        <li class="nav-item"><a class="nav-link text-black" href="play.html">Play</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
     </header>
     <main>
-        <section class="gallery-photos">
-            <div class="gallery-grid">
-                <figure> <img src="cat/sitting.gif" class="gallery-cat-pic">
-                    <figcaption>waiting for somebody to play..</figcaption>
-                </figure>
+        <section class="container my-5">
+            <div id="kittyCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators my-auto mx-auto">
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="5"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="6"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="7"></button>
+                    <button type="button" data-bs-target="#kittyCarousel" data-bs-slide-to="8"></button>
+                </div>
 
-                <figure> <img src="cat/laying.gif" class="gallery-cat-pic">
-                    <figcaption>so tired after looong day&#128164;</figcaption>
-                </figure>
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/sitting.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Waiting for somebody to play..</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/playing.gif" class="gallery-cat-pic">
-                    <figcaption>having fun&#127904;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/laying.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>So tired after looong day&#128164;</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/playing2.gif" class="gallery-cat-pic">
-                    <figcaption>look what I found!!!</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/playing.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Having fun&#127904;</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/lovely.gif" class="gallery-cat-pic">
-                    <figcaption>sending you love&#128150;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/playing2.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Look what I found!!!</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/eating.gif" class="gallery-cat-pic">
-                    <figcaption>movie night with snacks&#127871;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/lovely.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Sending you love&#128150;</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/working.gif" class="gallery-cat-pic">
-                    <figcaption>Busy working hard&#128187;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/eating.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Movie night with snacks&#127871;</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/eating2.gif" class="gallery-cat-pic">
-                    <figcaption>Enjoying a yummy meal&#127837;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/working.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Busy working hard&#128187;</figcaption>
+                        </figure>
+                    </div>
 
-                <figure> <img src="cat/friend.gif" class="gallery-cat-pic">
-                    <figcaption>Making new friends&#129309;</figcaption>
-                </figure>
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/eating2.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Enjoying a yummy meal&#127837;</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="carousel-item flex-column justify-content-center align-items-center w-100">
+                        <figure> <img src="cat/friend.gif" class="gallery-img img-fluid rounded-circle">
+                            <figcaption>Making new friends&#129309;</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#kittyCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#kittyCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+
             </div>
         </section>
-        <section class="note">
-            <p id="gallery-end">You can interact with kitty on <a href="play.html">Play</a> page!</p>
+        <section class="container my-5">
+            <div class="row align-items-center">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <p>You can interact with kitty on <a href="play.html" style="text-decoration: none" class="link-text">Play</a> page!
+                    </p>
+                </div>
+
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <img src="cat/dancing.gif" alt="dancing cat" id="link-img" class="img-fluid rounded-circle">
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
         <p>2025 My Virtual Pet</p>
         <p>Created by Diana and Zumrad</p>
+        <button id="theme-toggle" class="theme-btn btn btn-primary my-3 px-2 py-2">Switch theme</button>
     </footer>
+
+    <script src="gallery.js"></script>
+    <script src="common.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

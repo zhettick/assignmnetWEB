@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kitty Care</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="general.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!--  Scroll Progress Bar -->
+  <div id="scrollProgress">
+    <div id="scrollPaws"></div>
+  </div>
+
+  <header>
+    <h1>🐾 Take Care of Your Kitty!</h1>
+
+    <nav class="navbar navbar-expand-md navbar-custom">
+      <div class="container-fluid">
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navmenu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-black" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link text-black" href="care.html">Care</a></li>
+            <li class="nav-item"><a class="nav-link text-black" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link text-black" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link text-black" href="form.html">Adoption form</a></li>
+            <li class="nav-item"><a class="nav-link text-black" href="play.html">Play</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <div class="kitty-container" style="text-align:center; margin:20px 0;">
+    <img id="eat" src="cat/eating.gif" alt="Eating kitty" style="display:none; width:250px; border-radius:15px;">
+    <img id="sleep" src="cat/working.gif" alt="Sleeping kitty" style="display:none; width:250px; border-radius:15px;">
+    <img id="dance" src="cat/dancing.gif" alt="Dancing kitty" style="display:none; width:250px; border-radius:15px;">
+  </div>
+
+  <div class="care-actions">
+    <button onclick="showKitty('eat')">Feed</button>
+    <button onclick="showKitty('sleep')">Sleep</button>
+    <button onclick="showKitty('dance')">Dance</button>
+  </div>
+
+  <div id="care-text">
+    <p id="status">Your kitty is waiting...</p>
+  </div>
+  <input type="text" id="searchFaq" placeholder="Search questions..." class="search-box">
+  <ul id="suggestions" class="suggestions-box"></ul>
+
+
+  <div class="faq">
+    <h3 class="question">🐾 How often does my kitty sleep?</h3>
+    <p class="answer">Cats sleep around 16 hours a day!</p>
+
+    <h3 class="question">🐟 What is her favorite food?</h3>
+    <p class="answer">Definitely fish!</p>
+  </div>
+  <button id="greetBtn" class="btn btn-info">🐱 Greet Me</button>
+
+  <div id="notification" class="toast-msg"></div>
+
+
+
+  <footer>
+    <p>2025 My Virtual Pet.</p>
+    <p>Created by Diana and Zumrad</p>
+    <button id="toggleTheme" class="theme-btn btn btn-primary my-3 px-2 py-2">Switch theme</button>
+  </footer>
+
+
+  <script src="script1.js"></script>
+  <script src="care.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

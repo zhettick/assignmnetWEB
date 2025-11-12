@@ -1,0 +1,186 @@
+function showKitty(action, img, text) {
+  let kitty = document.getElementById("kitty");
+  kitty.src = img;
+  kitty.style.display = "block";
+  document.getElementById("status").innerText = text;
+}
+
+function feed() {
+  showKitty("feed", "cat/eating.gif", "😺 Your kitty is eating!");
+}
+
+function sleep() {
+  showKitty("sleep", "cat/working.gif", "💤 Your kitty is sleeping...");
+}
+
+function dance() {
+  showKitty("dance", "cat/dancing.gif", "🎵 Your kitty is dancing!");
+}
+
+function resetKitty() {
+  let kitty = document.getElementById("kitty");
+  kitty.style.display = "none";
+  kitty.src = "";
+  document.getElementById("status").innerText = "Your kitty is waiting...";
+}
+
+// Safe sidebar open/close handlers (guard elements may be absent on some pages)
+const openSidebarBtn = document.getElementById('openSidebar');
+const closeSidebarBtn = document.getElementById('closeSidebar');
+const sidebarEl = document.getElementById('sidebar');
+
+if (openSidebarBtn && sidebarEl) {
+  openSidebarBtn.addEventListener('click', () => {
+    sidebarEl.style.display = 'flex';
+    // also slide it in if positioned off-canvas
+    sidebarEl.style.right = '0';
+  });
+}
+
+if (closeSidebarBtn && sidebarEl) {
+  closeSidebarBtn.addEventListener('click', () => {
+    sidebarEl.style.display = 'none';
+    sidebarEl.style.right = '-250px';
+  });
+}
+//  Функция смены цвета
+function changeColor() {
+  const colors = [
+    '#fffaf5', '#ffe6e6', '#fff3cd', '#cdefff', '#e5ffcc', '#f3d1ff', '#ffd1dc'
+  ];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  document.body.style.backgroundColor = randomColor;
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.style.backgroundColor = randomColor);
+
+  localStorage.setItem('backgroundColor', randomColor);
+}
+
+//  Функция сброса цвета
+function resetColor() {
+  localStorage.removeItem('backgroundColor'); // удаляем сохранённый цвет
+  const defaultColor = '#fffaf5'; // стандартный цвет
+
+  document.body.style.backgroundColor = defaultColor;
+  document.querySelectorAll('header, footer, section, main, .card, nav')
+    .forEach(el => el.style.backgroundColor = '');
+}
+
+//  Восстановление цвета при загрузке
+document.addEventListener("DOMContentLoaded", () => {
+  const savedColor = localStorage.getItem('backgroundColor');
+  if (savedColor) {
+    document.body.style.backgroundColor = savedColor;
+    document.querySelectorAll('header, footer, section, main, .card, nav')
+      .forEach(el => el.style.backgroundColor = savedColor);
+  }
+});
+
+
+// ===  Время   ===
+const timeHeaderBtn = document.getElementById('showTimeHeader');
+const datetimeElement = document.getElementById('datetime');
+let timeInterval;
+
+if (timeHeaderBtn) {
+  timeHeaderBtn.addEventListener('click', () => {
+
+    datetimeElement.style.display = 'block';
+    datetimeElement.style.opacity = '0';
+    setTimeout(() => datetimeElement.style.opacity = '1', 100);
+
+
+    timeHeaderBtn.style.display = 'none';
+
+
+    function updateLiveTime() {
+      const now = new Date();
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      };
+      datetimeElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    updateLiveTime();
+    timeInterval = setInterval(updateLiveTime, 1000);
+  });
+}
+
+// 🌗 Toggle Day/Night Mode with Local Storage
+const toggleBtn = document.getElementById('toggleTheme');
+
+// Проверяем сохранённую тему
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+  enableDarkMode();
+} else {
+  disableDarkMode();
+}
+
+// === Переключение темы ===
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    if (document.body.classList.contains('dark-mode')) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+}
+
+function enableDarkMode() {
+  document.body.classList.add('dark-mode');
+
+  document.querySelectorAll('header, footer, section, main, .card, nav, .box, .login-container, .form-custom')
+    .forEach(el => {
+      if (!el.closest('.sidebar')) el.classList.add('dark-block');
+    });
+
+  if (toggleBtn) toggleBtn.textContent = "🌞 Switch to Day Mode";
+  localStorage.setItem("theme", "dark");
+}
+
+function disableDarkMode() {
+  document.body.classList.remove('dark-mode');
+
+  document.querySelectorAll('header, footer, section, main, .card, nav, .box, .login-container, .form-custom')
+    .forEach(el => el.classList.remove('dark-block'));
+
+  if (toggleBtn) toggleBtn.textContent = "🌙 Switch to Night Mode";
+  localStorage.setItem("theme", "light");
+}
+
+function showKitty(action) {
+  const gifs = ['eat', 'sleep', 'dance'];
+  gifs.forEach(id => document.getElementById(id).style.display = 'none');
+  document.getElementById(action).style.display = 'inline';
+  const status = document.getElementById('status');
+  if (action === 'eat') status.textContent = "😺 Your kitty is eating!";
+  if (action === 'sleep') status.textContent = "💤 Your kitty is sleeping...";
+  if (action === 'dance') status.textContent = "🎵 Your kitty is dancing!";
+}
+document.querySelectorAll(".question").forEach(q => {
+  q.addEventListener("click", () => {
+    const a = q.nextElementSibling;
+    a.style.display = (a.style.display === "block") ? "none" : "block";
+  });
+});
+
+
+// Safe scroll progress update (guard element may be absent)
+const _scrollProgressEl = document.getElementById("scrollProgress");
+window.addEventListener("scroll", () => {
+  const el = _scrollProgressEl || document.getElementById("scrollProgress");
+  if (!el) return;
+  const scrollTop = window.scrollY || window.pageYOffset || 0;
+  const docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const scrollPercent = Math.max(0, Math.min(100, (scrollTop / docHeight) * 100));
+  el.style.width = scrollPercent + "%";
+});

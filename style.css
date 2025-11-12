@@ -1,0 +1,848 @@
+/* Hero section */
+.hero {
+  padding: 20px 10px;
+}
+
+.hero-img {
+  width: 150px;
+}
+
+.hero-text {
+  max-width: 100%;
+  margin: auto;
+}
+
+.hero-text h2 {
+  font-size: 1.5em;
+}
+
+.hero-text p {
+  font-size: 1em;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-areas:
+    "time . sidebar"
+    ". title ."
+    ". subtitle .";
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  margin-top: -30px;
+}
+
+
+.header-grid h1 {
+  grid-area: title;
+}
+
+.header-grid #showTimeHeader {
+  grid-area: time;
+}
+
+.header-grid #openSidebar {
+  grid-area: sidebar;
+}
+
+.header-grid p {
+  grid-area: subtitle;
+}
+
+#datetime {
+  display: none;
+  font-size: 1.1em;
+  transition: opacity 0.6s ease;
+}
+
+/* Sidebar (справа сверху) */
+#openSidebar {
+  background-color: #ff9e9e;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 150, 150, 0.4);
+  transition: 0.3s ease;
+}
+
+#openSidebar:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+/* About section */
+.about-section {
+  grid-template-columns: 1fr;
+  padding: 20px 10px;
+}
+
+/* Контейнер для Fun Facts и котика */
+.funfacts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Центрирует текст и котика по вертикали */
+  gap: 40px;
+  margin: 40px auto;
+  max-width: 900px;
+  flex-wrap: wrap;
+  /* На маленьких экранах котик уйдёт вниз */
+}
+
+/* Блок с фактами */
+.facts {
+  background-color: #ff99993e;
+  border-radius: 15px;
+  padding: 40px 50px;
+  /* увеличим немного внутренний отступ */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  /* текст по центру */
+  flex: 1 1 400px;
+}
+
+/* Заголовок “Fun Facts” */
+.facts h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Список фактов */
+.facts ul {
+  list-style-type: "🐾 ";
+  margin: 15px 0 0 0;
+  padding-left: 20px;
+}
+
+.facts li {
+  margin: 8px 0;
+  font-size: 1.05em;
+}
+
+/* Котик */
+.kitty-pic img {
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.kitty-pic img:hover {
+  transform: scale(1.08);
+}
+
+
+/* === Cat Quotes Section === */
+.quotes-section {
+  background: linear-gradient(180deg, hsla(0, 100%, 80%, 0.249), #ffe6e6);
+  border-radius: 20px;
+  margin: 50px auto;
+  max-width: 700px;
+  padding: 40px 20px;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quotes-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+}
+
+.quotes-section h2 {
+  color: #ff6b6b;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+#quoteText {
+  font-size: 1.1em;
+  color: #444;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.quotes-section button {
+  background-color: #ff9e9e;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+}
+
+.quotes-section button:hover {
+  background-color: #ff6b6b;
+  transform: translateY(-2px);
+}
+
+.stats-section {
+  background: #ff99993e;
+  padding: 30px 15px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(255, 150, 150, 0.25);
+}
+
+.stats-container {
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff6b6b;
+  transition: 0.3s ease;
+}
+
+.stat-number:hover {
+  transform: scale(1.2);
+}
+
+.copy-container {
+  text-align: center;
+}
+
+#copyQuoteBtn {
+  background-color: #ff9e9e;
+  color: white;
+  border-radius: 12px;
+  border: none;
+  padding: 8px 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#copyQuoteBtn:hover {
+  background-color: #ff6b6b;
+}
+
+#copyAlert {
+  display: none;
+  color: #1fa658;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 1.1em;
+}
+
+/* Care section */
+h1 {
+  font-size: 2.5em;
+  color: #000000;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.kitty-container img {
+  width: 250px;
+  border-radius: 15px;
+}
+
+.care-actions button {
+  margin: 10px;
+  padding: 10px 25px;
+  background: #ff9e9e;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+}
+
+.care-actions button:hover {
+  background: #ff6b6b;
+}
+
+footer {
+  background: #ffe6e6;
+  padding: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.answer {
+  display: none;
+  margin-left: 10px;
+  color: #000000;
+}
+
+.question {
+  cursor: pointer;
+  color: #000000;
+}
+
+.search-box {
+  padding: 8px 12px;
+  margin: 10px auto;
+  display: block;
+  width: 250px;
+  border: 2px solid #ff9e9e;
+  border-radius: 8px;
+  outline: none;
+}
+
+.search-box:focus {
+  border-color: #ff6b6b;
+}
+
+.search-box::placeholder {
+  color: #d98282;
+  font-style: italic;
+}
+
+.suggestions-box {
+  background: #ffffff;
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.suggestions-box li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.suggestions-box li:hover {
+  background-color: #ffe6e6;
+}
+
+.toast-msg {
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: rgb(255, 253, 253);
+  color: rgb(245, 75, 75);
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 5000;
+  display: none;
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+  animation: fadeUp 0.4s ease-out;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    transform: translate(-50%, 70%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+  }
+}
+
+/* ===  Media Queries === */
+
+/* Mobile (до 600px) */
+@media (max-width: 600px) {
+  body {
+    font-size: 1rem;
+    transition: font-size 0.3s ease;
+  }
+
+  h1 {
+    font-size: 2.4rem !important;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .kitty-container img {
+    width: 180px;
+  }
+
+  .care-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .care-actions button {
+    width: 80%;
+    font-size: 1em;
+  }
+}
+
+/* Tablet (до 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  body {
+    font-size: 1.1rem;
+    transition: font-size 0.3s ease;
+  }
+
+  h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .kitty-container img {
+    width: 220px;
+  }
+
+  .care-actions button {
+    font-size: 1.1em;
+  }
+}
+
+/* Desktop (от 993px и выше) */
+@media (min-width: 993px) {
+  body {
+    font-size: 1.2rem;
+    transition: font-size 0.3s ease;
+  }
+
+  h1 {
+    font-size: 3rem !important;
+  }
+
+  .kitty-container img {
+    width: 250px;
+  }
+}
+
+/* Сайдбар */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #ffe6e6;
+  box-shadow: -3px 0 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 3000;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+}
+
+.sidebar a:hover {
+  color: #ff3366;
+}
+
+
+.sidebar h2 {
+  color: #ff6b6b;
+}
+
+/* === SIDEBAR BUTTONS STYLING === */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* центрует все элементы по центру */
+  gap: 15px;
+}
+
+.sidebar button {
+  width: 200px;
+  /* одинаковая ширина */
+  padding: 10px 0;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/*  Change Background */
+.sidebar button.btn-warning {
+  background-color: #ff9e9e;
+  color: #fff;
+  border: 2px solid #ffd6d6;
+}
+
+.sidebar button.btn-warning:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
+}
+
+/*  Reset Background */
+.sidebar button.btn-secondary {
+  background-color: #555;
+  color: #fff;
+  border: 2px solid #999;
+}
+
+.sidebar button.btn-secondary:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+
+/*  Toggle Theme */
+
+/* Кнопка переключения */
+#toggleTheme {
+  width: 200px;
+  background-color: #ff9e9e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+#toggleTheme:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.05);
+}
+
+/*  Кнопка закрытия “X” */
+.sidebar #closeSidebar {
+  align-self: flex-end;
+  background-color: #ff9e9e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.sidebar #closeSidebar:hover {
+  background-color: #ff6b6b;
+  transform: rotate(90deg);
+}
+
+/* Main content */
+.main {
+  grid-area: main;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  grid-area: footer;
+  background-color: #ffe6e6;
+  text-align: center;
+  padding: 15px;
+  border-top: 2px solid #ff9e9e;
+}
+
+#theme-toggle {
+  max-width: 50%;
+  font-size: 0.8em;
+}
+
+.theme-btn {
+  width: auto !important;
+  font-size: 0.8em !important;
+  border-radius: 10px !important;
+}
+
+.theme-btn:hover {
+  transform: scale(1.03) !important;
+  transition: background-color 0.3s, transform 0.2s !important;
+}
+
+/* Ссылки внутри */
+.sidebar a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 18px;
+}
+
+.sidebar a:hover {
+  color: #ff3366;
+}
+
+/* ===== Settings Page ===== */
+.settings-page {
+  background: #fffaf5;
+  font-family: 'Comic Sans MS', cursive;
+  color: #000000;
+  text-align: center;
+  padding: 30px;
+}
+
+.settings-header {
+  background: #ffcbcb;
+  padding: 20px;
+  border-bottom: 4px solid #ff9e9e;
+}
+
+.settings-header h1 {
+  margin: 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ff9e9e;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #ff6b6b;
+}
+
+.settings-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff0f5;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.settings-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ff6b6b;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ffcbcb;
+  font-size: 1em;
+}
+
+.save-btn {
+  background: #ff9e9e;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1em;
+}
+
+.save-btn:hover {
+  background: #ff6b6b;
+}
+
+/* ===== Grid Layout Page ===== */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main sidebar"
+    "footer footer";
+  grid-template-columns: 1fr 250px;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.grid-container .header {
+  grid-area: header;
+  background: #ffcbcb;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.grid-container .sidebar {
+  grid-area: sidebar;
+  background: #ffe6e6;
+  padding: 20px;
+  text-align: left;
+}
+
+.grid-container .main {
+  grid-area: main;
+  background: #fffaf5;
+  padding: 20px;
+}
+
+.grid-container .footer {
+  grid-area: footer;
+  background: #ffcbcb;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ===== LOG IN/SIGN UP PAGE ===== */
+.login-text,
+.signup-text,
+.login-container span {
+  margin-top: 15px;
+  color: #000000;
+  font-size: 0.95em;
+}
+
+.login-container,
+.box {
+  background: #ff99993e;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 155, 155, 0.25);
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-container h3 {
+  color: #ff6b81;
+}
+
+.login-container h2,
+.box h2 {
+  color: #ff6b81;
+  font-weight: bold;
+  color: #ff6b81;
+}
+
+.login-container p {
+  color: #ff6b81;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-control {
+  font-size: 0.9em;
+  border: 1px solid #b81414;
+  border-radius: 6px;
+}
+
+.signup-text a,
+.box a {
+  color: #ff758c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text a:hover,
+.box a:hover {
+  text-decoration: underline;
+}
+
+.back-home {
+  display: block;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: #d64f6c;
+}
+
+@media (max-width: 600px) {
+
+  .login-container,
+  .box {
+    max-width: 400px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 1.6em;
+  }
+
+  .login-container h3 {
+    font-size: 1.3em;
+  }
+
+  .form-control {
+    font-size: 0.85em;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 10px 12px;
+  }
+
+  .back-home {
+    font-size: 0.9em;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .login-container,
+  .box {
+    max-width: 450px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 1.8em;
+  }
+
+  .btn {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+
+  .form-control {
+    font-size: 0.95em;
+  }
+}
+
+/* Десктопы */
+@media (min-width: 993px) {
+
+  .login-container,
+  .box {
+    max-width: 500px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 2em;
+  }
+
+  .form-control {
+    font-size: 1em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
+}
