@@ -18,24 +18,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="home" style="background-color: #fffaf5; color: #333;">
+<body class="home">
   <!--  Scroll Progress Bar -->
   <div id="scrollProgress">
     <div id="scrollPaws"></div>
   </div>
   <!--  HEADER -->
-  <header class="text-center py-4">
-    <h1>🐾 Welcome to My Virtual Kitty!</h1>
-    <p>Your own cute, fluffy friend on the web</p>
+  <header>
+    <div class="header-grid py-3">
+      <h1>🐾 Welcome to My Virtual Kitty!</h1>
+      <p>Your own cute, fluffy friend on the web</p>
 
-    <button id="openSidebar" class="btn btn-outline-danger position-absolute end-0 me-3"
-      style="z-index: 2000; top: 20px;">☰</button>
+      <button id="openSidebar" class="btn btn-outline-danger">☰</button>
 
-    <div style="position: absolute; left: 20px; top: 20px;">
-      <button id="showTimeHeader" class="btn btn-outline-dark btn-sm">Show Time</button>
-      <h2 id="datetime" style="display: none; font-size: 1.1em; color: #444; font-weight: 500; margin-top: 5px;"></h2>
+        <button id="showTimeHeader" class="btn btn-outline-dark">Show Time</button>
+        <h2 id="datetime" class="mt-3"></h2>
     </div>
-
 
     <!--  NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-custom">
@@ -67,7 +65,6 @@
     <button id="closeSidebar" class="btn btn-sm btn-outline-danger mb-3">✖️</button>
     <a href="account.html" class="d-block mb-2">Profile</a>
     <a href="settings.html" class="d-block mb-2">Settings</a>
-    <a href="logout.html" class="d-block">Logout</a>
     <!--  Кнопка для смены фона -->
     <section class="container text-center my-5">
       <button onclick="changeColor()" class="btn btn-warning my-1">Change Background</button>
@@ -98,17 +95,7 @@
   <!--  FOOTER -->
   <footer class="text-center py-3">
     <p>2025 My Virtual Pet</p>
-    <p> Created by Diana and Zumrad</p>
-    <h2>🌟 Rate Your Kitty!</h2>
-    <div id="rating" class="my-3">
-      <span class="star">⭐</span>
-      <span class="star">⭐</span>
-      <span class="star">⭐</span>
-      <span class="star">⭐</span>
-      <span class="star">⭐</span>
-    </div>
-    <p id="ratingText" class="fw-bold text-danger"></p>
-
+    <p>Created by Diana and Zumrad</p>
   </footer>
 
 

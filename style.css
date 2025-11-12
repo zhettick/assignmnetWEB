@@ -20,21 +20,58 @@
   font-size: 1em;
 }
 
-.star {
-  font-size: 2em;
-  cursor: pointer;
-  transition: transform 0.2s, color 0.3s;
+.header-grid {
+  display: grid;
+  grid-template-areas:
+    "time . sidebar"
+    ". title ."
+    ". subtitle .";
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  margin-top: -30px;
 }
 
-.star:hover {
-  transform: scale(1.2);
-  color: #ff6b6b;
+
+.header-grid h1 {
+  grid-area: title;
+}
+
+.header-grid #showTimeHeader {
+  grid-area: time;
+}
+
+.header-grid #openSidebar {
+  grid-area: sidebar;
+}
+
+.header-grid p {
+  grid-area: subtitle;
 }
 
 #datetime {
-  transition: opacity 0.6s ease-in-out;
+  display: none;
+  font-size: 1.1em;
+  transition: opacity 0.6s ease;
 }
 
+/* Sidebar (справа сверху) */
+#openSidebar {
+  background-color: #ff9e9e;
+  color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 150, 150, 0.4);
+  transition: 0.3s ease;
+}
+
+#openSidebar:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.1);
+}
 
 /* About section */
 .about-section {
@@ -170,21 +207,6 @@
 
 .stat-number:hover {
   transform: scale(1.2);
-}
-
-
-/* Tablet — 2 карточки */
-@media (max-width: 992px) {
-  .card {
-    width: 45%;
-  }
-}
-
-/* Mobile — 1 карточка */
-@media (max-width: 576px) {
-  .card {
-    width: 90%;
-  }
 }
 
 .copy-container {
@@ -331,9 +353,6 @@ footer {
     opacity: 1;
   }
 }
-
-
-
 
 /* ===  Media Queries === */
 
@@ -515,16 +534,6 @@ footer {
   transform: rotate(90deg);
 }
 
-/*  Мобильная адаптация */
-@media (max-width: 600px) {
-  .sidebar button,
-  #toggleTheme {
-    width: 90%;
-  }
-}
-
-
-
 /* Main content */
 .main {
   grid-area: main;
@@ -693,4 +702,147 @@ footer {
   background: #ffcbcb;
   padding: 10px;
   text-align: center;
+}
+
+/* ===== LOG IN/SIGN UP PAGE ===== */
+.login-text,
+.signup-text,
+.login-container span {
+  margin-top: 15px;
+  color: #000000;
+  font-size: 0.95em;
+}
+
+.login-container,
+.box {
+  background: #ff99993e;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(255, 155, 155, 0.25);
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-container h3 {
+  color: #ff6b81;
+}
+
+.login-container h2,
+.box h2 {
+  color: #ff6b81;
+  font-weight: bold;
+  color: #ff6b81;
+}
+
+.login-container p {
+  color: #ff6b81;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.form-control {
+  font-size: 0.9em;
+  border: 1px solid #b81414;
+  border-radius: 6px;
+}
+
+.signup-text a,
+.box a {
+  color: #ff758c;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text a:hover,
+.box a:hover {
+  text-decoration: underline;
+}
+
+.back-home {
+  display: block;
+  font-weight: bold;
+  color: #ff6b6b;
+  text-decoration: none;
+}
+
+.back-home:hover {
+  color: #d64f6c;
+}
+
+@media (max-width: 600px) {
+
+  .login-container,
+  .box {
+    max-width: 400px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 1.6em;
+  }
+
+  .login-container h3 {
+    font-size: 1.3em;
+  }
+
+  .form-control {
+    font-size: 0.85em;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 0.9em;
+    padding: 10px 12px;
+  }
+
+  .back-home {
+    font-size: 0.9em;
+  }
+}
+
+/* Планшеты */
+@media (min-width: 601px) and (max-width: 992px) {
+
+  .login-container,
+  .box {
+    max-width: 450px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 1.8em;
+  }
+
+  .btn {
+    font-size: 1em;
+    padding: 12px 15px;
+  }
+
+  .form-control {
+    font-size: 0.95em;
+  }
+}
+
+/* Десктопы */
+@media (min-width: 993px) {
+
+  .login-container,
+  .box {
+    max-width: 500px;
+  }
+
+  .login-container h2,
+  .box h2 {
+    font-size: 2em;
+  }
+
+  .form-control {
+    font-size: 1em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
 }

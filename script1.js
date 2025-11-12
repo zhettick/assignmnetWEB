@@ -1,7 +1,7 @@
 function showKitty(action, img, text) {
   let kitty = document.getElementById("kitty");
-  kitty.src = img;               
-  kitty.style.display = "block"; 
+  kitty.src = img;
+  kitty.style.display = "block";
   document.getElementById("status").innerText = text;
 }
 
@@ -13,43 +13,37 @@ function sleep() {
   showKitty("sleep", "cat/working.gif", "💤 Your kitty is sleeping...");
 }
 
-function dance() { 
+function dance() {
   showKitty("dance", "cat/dancing.gif", "🎵 Your kitty is dancing!");
 }
 
 function resetKitty() {
   let kitty = document.getElementById("kitty");
-  kitty.style.display = "none"; 
-  kitty.src = "";               
+  kitty.style.display = "none";
+  kitty.src = "";
   document.getElementById("status").innerText = "Your kitty is waiting...";
 }
 
-function logout() {
-  alert("You have been logged out!");
-  window.location.href = "index.html";
+// Safe sidebar open/close handlers (guard elements may be absent on some pages)
+const openSidebarBtn = document.getElementById('openSidebar');
+const closeSidebarBtn = document.getElementById('closeSidebar');
+const sidebarEl = document.getElementById('sidebar');
+
+if (openSidebarBtn && sidebarEl) {
+  openSidebarBtn.addEventListener('click', () => {
+    sidebarEl.style.display = 'flex';
+    // also slide it in if positioned off-canvas
+    sidebarEl.style.right = '0';
+  });
 }
 
-document.getElementById('openSidebar').addEventListener('click', () => {
-  document.getElementById('sidebar').style.display = 'flex';
-});
-
-document.getElementById('closeSidebar').addEventListener('click', () => {
-  document.getElementById('sidebar').style.display = 'none';
-});
-
-   
-
-  
-    const sidebar = document.getElementById('sidebar');
-    document.getElementById('openSidebar').addEventListener('click', () => {
-      sidebar.style.right = '0';
-    });
-    document.getElementById('closeSidebar').addEventListener('click', () => {
-      sidebar.style.right = '-250px';
-    });
-    
-   ;
-   //  Функция смены цвета
+if (closeSidebarBtn && sidebarEl) {
+  closeSidebarBtn.addEventListener('click', () => {
+    sidebarEl.style.display = 'none';
+    sidebarEl.style.right = '-250px';
+  });
+}
+//  Функция смены цвета
 function changeColor() {
   const colors = [
     '#fffaf5', '#ffe6e6', '#fff3cd', '#cdefff', '#e5ffcc', '#f3d1ff', '#ffd1dc'
@@ -83,55 +77,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
- 
-  // ===  Время   ===
+
+// ===  Время   ===
 const timeHeaderBtn = document.getElementById('showTimeHeader');
 const datetimeElement = document.getElementById('datetime');
-let timeInterval; 
+let timeInterval;
 
 if (timeHeaderBtn) {
   timeHeaderBtn.addEventListener('click', () => {
-    
+
     datetimeElement.style.display = 'block';
     datetimeElement.style.opacity = '0';
     setTimeout(() => datetimeElement.style.opacity = '1', 100);
 
-    
+
     timeHeaderBtn.style.display = 'none';
 
-    
+
     function updateLiveTime() {
       const now = new Date();
-      const options = { 
-        weekday: 'long', 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
+      const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
         minute: '2-digit',
         second: '2-digit'
       };
       datetimeElement.textContent = now.toLocaleDateString('en-US', options);
     }
 
-    updateLiveTime();                
-    timeInterval = setInterval(updateLiveTime, 1000); 
+    updateLiveTime();
+    timeInterval = setInterval(updateLiveTime, 1000);
   });
 }
-
-
-//  Рейтинг (Rate Your Kitty)
-const stars = document.querySelectorAll('.star');
-const ratingText = document.getElementById('ratingText');
-
-stars.forEach((star, index) => {
-  star.addEventListener('click', () => {
-    stars.forEach((s, i) => {
-      s.style.color = i <= index ? '#ff9e9e' : '#ccc';
-    });
-    ratingText.textContent = `You rated your kitty ${index + 1} / 5 ⭐`;
-  });
-});
 
 // 🌗 Toggle Day/Night Mode with Local Storage
 const toggleBtn = document.getElementById('toggleTheme');
@@ -145,52 +125,48 @@ if (savedTheme === 'dark') {
 }
 
 // === Переключение темы ===
-toggleBtn.addEventListener('click', () => {
-  if (document.body.classList.contains('dark-mode')) {
-    disableDarkMode();
-  } else {
-    enableDarkMode();
-  }
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    if (document.body.classList.contains('dark-mode')) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
+  });
+}
 
-//  Включаем тёмную тему
 function enableDarkMode() {
   document.body.classList.add('dark-mode');
 
-  // Перекрашиваем ВСЁ, кроме sidebar
-  document.querySelectorAll('header, footer, section, main, .card, nav')
+  document.querySelectorAll('header, footer, section, main, .card, nav, .box, .login-container, .form-custom')
     .forEach(el => {
       if (!el.closest('.sidebar')) el.classList.add('dark-block');
     });
 
-  toggleBtn.textContent = '🌞 Switch to Day Mode';
-  localStorage.setItem('theme', 'dark');
+  if (toggleBtn) toggleBtn.textContent = "🌞 Switch to Day Mode";
+  localStorage.setItem("theme", "dark");
 }
 
-//  Возвращаем светлую тему
 function disableDarkMode() {
   document.body.classList.remove('dark-mode');
 
-  document.querySelectorAll('header, footer, section, main, .card, nav')
+  document.querySelectorAll('header, footer, section, main, .card, nav, .box, .login-container, .form-custom')
     .forEach(el => el.classList.remove('dark-block'));
 
-  toggleBtn.textContent = '🌙 Switch to Night Mode';
-  localStorage.setItem('theme', 'light');
+  if (toggleBtn) toggleBtn.textContent = "🌙 Switch to Night Mode";
+  localStorage.setItem("theme", "light");
 }
 
-
-
-
 function showKitty(action) {
-      const gifs = ['eat', 'sleep', 'dance'];
-      gifs.forEach(id => document.getElementById(id).style.display = 'none');
-      document.getElementById(action).style.display = 'inline';
-      const status = document.getElementById('status');
-      if (action === 'eat') status.textContent = "😺 Your kitty is eating!";
-      if (action === 'sleep') status.textContent = "💤 Your kitty is sleeping...";
-      if (action === 'dance') status.textContent = "🎵 Your kitty is dancing!";
-    }
-    document.querySelectorAll(".question").forEach(q => {
+  const gifs = ['eat', 'sleep', 'dance'];
+  gifs.forEach(id => document.getElementById(id).style.display = 'none');
+  document.getElementById(action).style.display = 'inline';
+  const status = document.getElementById('status');
+  if (action === 'eat') status.textContent = "😺 Your kitty is eating!";
+  if (action === 'sleep') status.textContent = "💤 Your kitty is sleeping...";
+  if (action === 'dance') status.textContent = "🎵 Your kitty is dancing!";
+}
+document.querySelectorAll(".question").forEach(q => {
   q.addEventListener("click", () => {
     const a = q.nextElementSibling;
     a.style.display = (a.style.display === "block") ? "none" : "block";
@@ -198,9 +174,13 @@ function showKitty(action) {
 });
 
 
+// Safe scroll progress update (guard element may be absent)
+const _scrollProgressEl = document.getElementById("scrollProgress");
 window.addEventListener("scroll", () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  document.getElementById("scrollProgress").style.width = scrollPercent + "%";
+  const el = _scrollProgressEl || document.getElementById("scrollProgress");
+  if (!el) return;
+  const scrollTop = window.scrollY || window.pageYOffset || 0;
+  const docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  const scrollPercent = Math.max(0, Math.min(100, (scrollTop / docHeight) * 100));
+  el.style.width = scrollPercent + "%";
 });

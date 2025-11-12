@@ -126,11 +126,20 @@ body.dark-mode .card,
 body.dark-mode .settings-page,
 body.dark-mode .grid-container .main,
 body.dark-mode .sidebar,
-body.dark-mode #datetime {
+body.dark-mode .login-container,
+body.dark-mode .box{
   background: #2b0000;
   color: #ffffff !important;
   border: 1px solid #660000;
   box-shadow: 0 0 15px rgba(255, 100, 100, 0.2);
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #000000 !important;
+}
+
+body.dark-mode .form-control:focus {
+  border-color: #ffffff !important;
 }
 
 body.dark-mode h1,
@@ -207,7 +216,8 @@ body.dark-mode .carousel-control-next-icon {
 }
 
 body.dark-mode .carousel-control-prev,
-body.dark-mode .carousel-control-next {
+body.dark-mode .carousel-control-next,
+body.dark-mode .form-custom {
   background-color: transparent !important; 
   box-shadow: none !important;
   border: none !important;
@@ -241,7 +251,23 @@ body.dark-mode .search-box::placeholder {
   color: #b84a4a;
 }
 
-body.dark-mode .link-text {
-  color: rgb(158, 158, 247);
+body.dark-mode .link-text,
+body.dark-mode .login-container span {
+  color: rgb(157, 241, 254);
 }
 
+body.dark-mode .back-home, 
+body.dark-mode .signup-text a,
+body.dark-mode .login-text a {
+  color: #fa9292 !important;
+}
+
+body.dark-mode .back-home:hover {
+  color: #ff4d4d !important;
+  text-decoration: underline;
+}
+
+body.dark-mode .signup-text a:hover,
+body.dark-mode .login-text a:hover {
+  text-decoration: underline;
+}
