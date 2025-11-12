@@ -113,36 +113,31 @@ form.addEventListener("submit", (e) => {
   if (!check) {
     return;
   }
-  $("#form").on("submit", function (e) {
-    e.preventDefault();
 
-    const submitBtn = $("#submit-btn");
-    const spinner = submitBtn.find(".spinner-border");
-    const btnText = submitBtn.find(".submit-btn-text");
-    const status = $("#formStatus");
+  const submitBtn = $("#submit-btn");
+  const spinner = submitBtn.find(".spinner-border");
+  const btnText = submitBtn.find(".submit-btn-text");
+  const status = $("#formStatus");
 
-    submitBtn.prop("disabled", true);
-    spinner.removeClass("d-none");
-    btnText.text("Please wait...");
+  submitBtn.prop("disabled", true);
+  spinner.removeClass("d-none");
+  btnText.text("Please wait...");
 
-    fetch("https://httpbin.org/post", {
-      method: "POST",
-      body: new FormData(this)
-    })
-      .then(() => {
-        setTimeout(() => {
-          spinner.addClass("d-none");
-          btnText.text("Submit!");
-          submitBtn.prop("disabled", false);
-          status.text("Form submitted!");
-          $("#form")[0].reset();
-        }, 500);
-      })
-      .catch(() => {
+  fetch("https://httpbin.org/post", {
+    method: "POST",
+    body: new FormData(form)
+  })
+    .then(() => {
         spinner.addClass("d-none");
         btnText.text("Submit!");
         submitBtn.prop("disabled", false);
-        status.text("Error sending form.");
-      });
-  });
+        status.text("Form submitted!");
+        $("#form")[0].reset();
+    })
+    .catch(() => {
+      spinner.addClass("d-none");
+      btnText.text("Submit!");
+      submitBtn.prop("disabled", false);
+      status.text("Error sending form.");
+    });
 });

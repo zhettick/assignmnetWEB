@@ -14,14 +14,17 @@
   <div id="signupBox" class="box hidden mt-5 pt-4">
     <h2>🐾 Sign Up</h2>
     <form class="form-custom my-2 mx-auto px-3">
-      <div>
-        <input type="text" id="signupName" class="form-control mt-5 mb-3" placeholder="Enter your name" required>
+      <div class="mb-3">
+        <input type="text" id="signupName" class="form-control mt-5" placeholder="Enter your name" required>
+        <small class="text-danger d-block" id="err-su-name"></small>
       </div>
-      <div>
-        <input type="email" id="signupEmail" class="form-control mb-3" placeholder="Enter your email" required>
+      <div class="mb-3">
+        <input type="email" id="signupEmail" class="form-control" placeholder="Enter your email" required>
+        <small class="text-danger d-block" id="err-su-email"></small>
       </div>
-      <div>
-        <input type="password" id="signupPass" class="form-control mb-3" placeholder="Create password" required>
+      <div class="mb-3">
+        <input type="password" id="signupPass" class="form-control" placeholder="Create password" required>
+        <small class="text-danger d-block" id="err-su-pass"></small>
       </div>
       <button type="button" onclick="signUp()" class="btn">Sign Up</button>
     </form>
@@ -33,11 +36,13 @@
   <div id="loginBox" class="box mt-5 pt-4">
     <h2>🐱 Log In</h2>
     <form class="form-custom my-2 mx-auto px-3">
-      <div>
-        <input type="email" id="loginEmail" class="form-control mt-5 mb-3" placeholder="Enter your email" required>
+      <div class="mb-3">
+        <input type="email" id="loginEmail" class="form-control mt-5" placeholder="Enter your email" required>
+        <small class="text-danger d-block" id="err-li-email"></small>
       </div>
-      <div>
-        <input type="password" id="loginPass" class="form-control mb-3" placeholder="Enter your password" required>
+      <div class="mb-3">
+        <input type="password" id="loginPass" class="form-control" placeholder="Enter your password" required>
+        <small class="text-danger d-block" id="err-li-pass"></small>
       </div>
       <div>
         <button type="button" onclick="logIn()" class="btn">Log In</button>
